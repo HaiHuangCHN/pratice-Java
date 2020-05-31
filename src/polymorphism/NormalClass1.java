@@ -33,8 +33,16 @@ public class NormalClass1 extends AbstractClass implements Interface {
 //     * 
 //     * @return
 //     */
-//    @Override
 //    public String finalMethod() {
+//        return "NormalCLass1 override default implementation";
+//    }
+
+//    /**
+//     * Cannot override the static method from super class
+//     * 
+//     * @return
+//     */
+//    public String staticMethod() {
 //        return "NormalCLass1 override default implementation";
 //    }
 

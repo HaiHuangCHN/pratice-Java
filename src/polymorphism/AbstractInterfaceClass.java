@@ -2,29 +2,25 @@ package polymorphism;
 
 public abstract class AbstractInterfaceClass implements Interface {
 
-    private String abstractA;
+    private String abstractInterfaceA;
 
-    private String abstractB;
+    private String abstractInterfaceB;
 
-    private String abstractC;
+    private String abstractInterfaceC;
 
     public AbstractInterfaceClass() {
         System.out.println("Enter AbstractInterfaceClass no-argu Constructor");
     }
 
-    public AbstractInterfaceClass(String abstractA, String abstractB, String abstractC) {
+    public AbstractInterfaceClass(String abstractInterfaceA, String abstractInterfaceB, String abstractInterfaceC) {
         System.out.println("Enter AbstractInterfaceClass argu Constructor");
-        this.abstractA = abstractA;
-        this.abstractB = abstractB;
-        this.abstractC = abstractC;
+        this.abstractInterfaceA = abstractInterfaceA;
+        this.abstractInterfaceB = abstractInterfaceB;
+        this.abstractInterfaceC = abstractInterfaceC;
     }
 
     public String sameNameMethod() {
         return "Default implementation, any sub-class can override it";
-    }
-
-    public final String finalMethod() {
-        return "Final method cannot be override by sub-class";
     }
 
     /**
@@ -34,33 +30,33 @@ public abstract class AbstractInterfaceClass implements Interface {
      */
     public abstract String abstractMethod();
 
-    public String getAbstractA() {
-        return abstractA;
+    protected String getAbstractInterfaceA() {
+        return abstractInterfaceA;
     }
 
-    public void setAbstractA(String abstractA) {
-        this.abstractA = abstractA;
+    protected void setAbstractInterfaceA(String abstractInterfaceA) {
+        this.abstractInterfaceA = abstractInterfaceA;
     }
 
-    public String getAbstractB() {
-        return abstractB;
+    protected String getAbstractInterfaceB() {
+        return abstractInterfaceB;
     }
 
-    public void setAbstractB(String abstractB) {
-        this.abstractB = abstractB;
+    protected void setAbstractInterfaceB(String abstractInterfaceB) {
+        this.abstractInterfaceB = abstractInterfaceB;
     }
 
-    public String getAbstractC() {
-        return abstractC;
+    protected String getAbstractInterfaceC() {
+        return abstractInterfaceC;
     }
 
-    public void setAbstractC(String abstractC) {
-        this.abstractC = abstractC;
+    protected void setAbstractInterfaceC(String abstractInterfaceC) {
+        this.abstractInterfaceC = abstractInterfaceC;
     }
 
     @Override
     public String toString() {
-        return "AbstractInterfaceClass [abstractA=" + abstractA + ", abstractB=" + abstractB + ", abstractC=" + abstractC + "]";
+        return "AbstractInterfaceClass [abstractA=" + abstractInterfaceA + ", abstractB=" + abstractInterfaceB + ", abstractC=" + abstractInterfaceC + "]";
     }
 
 }
