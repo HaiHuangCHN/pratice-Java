@@ -28,7 +28,7 @@ public class NormalClass2 extends AbstractInterfaceClass {
 
     @Override
     public String abstractMethod() {
-        System.out.println("NormalClass2 Implement abstractMethod");
+        System.out.println("NormalClass2 Implement AbstractInterfaceClass,abstractMethod()");
         return null;
     }
 
