@@ -1,4 +1,4 @@
-package concurrency.study;
+package concurrency.study.skywang;
 
 //Demo.java 的源码
 class MyThread1 extends Thread {
