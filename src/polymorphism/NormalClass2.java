@@ -33,20 +33,26 @@ public class NormalClass2 extends AbstractInterfaceClass {
     }
 
     @Override
-    public String method1() {
-        System.out.println("NormalClass2 Implement Interface method1");
+    public String sameSuperInterfaceMethod() {
+        System.out.println("The type NormalClass1 must implement the inherited abstract method Interface.sameSuperInterfaceMethod()");
         return null;
     }
 
     @Override
-    public String method2() {
-        System.out.println("NormalClass2Implement Interface method2");
+    public String interfaceMethod1() {
+        System.out.println("The type NormalClass1 must implement the inherited abstract method Interface.interfaceMethod1()");
         return null;
     }
 
     @Override
     public String superInterface1Method1() {
-        System.out.println("NormalClass2 Implement superInterface1Method1");
+        System.out.println("The type NormalClass1 must implement the inherited abstract method SuperInterface1.superInterface1Method1()");
+        return null;
+    }
+
+    @Override
+    public String superInterface1Method2() {
+        System.out.println("The type NormalClass1 must implement the inherited abstract method SuperInterface1.superInterface1Method2()");
         return null;
     }
 

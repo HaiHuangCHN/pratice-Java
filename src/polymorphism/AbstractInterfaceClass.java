@@ -20,7 +20,7 @@ public abstract class AbstractInterfaceClass implements Interface {
     }
 
     public String sameNameMethod() {
-        return "Default implementation, any sub-class can override it";
+        return "Default implementation of sameNameMethod(), any sub-class can override it, but not a must";
     }
 
     /**

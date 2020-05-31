@@ -72,7 +72,7 @@ public class NormalClass1 extends AbstractClass implements Interface {
 
     @Override
     public String superInterface1Method2() {
-        // TODO Auto-generated method stub
+        System.out.println("The type NormalClass1 must implement the inherited abstract method SuperInterface1.superInterface1Method2()");
         return null;
     }
 
