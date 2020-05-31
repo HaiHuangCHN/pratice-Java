@@ -1,4 +1,4 @@
-package concurrency.study.skywang;
+package concurrency.study;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;

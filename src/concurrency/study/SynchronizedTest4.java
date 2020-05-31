@@ -1,4 +1,4 @@
-package concurrency.study.skywang;
+package concurrency.study;
 
 /**
  * object lock example： use synchronized keyword

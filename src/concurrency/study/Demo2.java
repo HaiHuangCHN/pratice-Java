@@ -1,4 +1,4 @@
-package concurrency.study.skywang;
+package concurrency.study;
 
 class Count {
 
