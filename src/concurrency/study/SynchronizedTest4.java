@@ -1,4 +1,4 @@
-package concurrency.test;
+package concurrency.study;
 
 /**
  * object lock example： use synchronized keyword

@@ -1,4 +1,4 @@
-package concurrency.test;
+package concurrency.study;
 
 //ThreadTest.java 源码
 class MyThread extends Thread {

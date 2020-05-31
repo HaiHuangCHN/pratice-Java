@@ -1,4 +1,4 @@
-package concurrency.test;
+package concurrency.study;
 
 /**
  * Object lock example: lock code block

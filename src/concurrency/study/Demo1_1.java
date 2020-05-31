@@ -1,4 +1,4 @@
-package concurrency.test;
+package concurrency.study;
 
 class MyRunable1_1 implements Runnable {
 

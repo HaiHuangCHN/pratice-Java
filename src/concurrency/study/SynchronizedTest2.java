@@ -1,17 +1,17 @@
-package concurrency.test;
+package concurrency.study;
 
 /**
- * Not use synchronized, the two threads execute a++ at the same time
+ * Use synchronized, the two threads execute a++ at the same time
  *
  * @author Huang, Hai
  * @date 2020-01-20
  */
-public class SynchronizedTest1 implements Runnable {
+public class SynchronizedTest2 implements Runnable {
     // shared resource "i" of the two threads
     static int i = 0;
 
-    // Not modified by synchronized key word
-    public void method() {
+    // modified by synchronized key word
+    public synchronized void method() {
         i++;
     }
 
@@ -23,7 +23,7 @@ public class SynchronizedTest1 implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        SynchronizedTest1 test = new SynchronizedTest1();
+        SynchronizedTest2 test = new SynchronizedTest2();
         Thread t1 = new Thread(test);
         Thread t2 = new Thread(test);
         t1.start();
