@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Built-By: h.a.huang
+Build-Jdk: 1.8.0_191
+Boot-Class-Path: ../../../../javassist/javassist/3.4.GA/javassist-3.4.
+ GA.jar javassist-3.4.GA.jar javassist.jar
+Bundle-Description: Extensions to the SLF4J API
+Bundle-Version: 
+Created-By: Maven Integration for Eclipse
+Implementation-Version: 1.7.25
+Premain-Class: org.slf4j.agent.AgentPremain
+X-Compile-Source-JDK: 1.5
+X-Compile-Target-JDK: 1.5
+

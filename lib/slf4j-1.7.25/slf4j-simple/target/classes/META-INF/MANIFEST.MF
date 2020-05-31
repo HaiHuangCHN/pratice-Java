@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: h.a.huang
+Build-Jdk: 1.8.0_191
+Bundle-Description: SLF4J Simple binding
+Bundle-Version: 
+Created-By: Maven Integration for Eclipse
+Implementation-Version: 1.7.25
+X-Compile-Source-JDK: 1.5
+X-Compile-Target-JDK: 1.5
+
