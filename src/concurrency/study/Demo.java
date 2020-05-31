@@ -6,6 +6,7 @@ class MyThread1 extends Thread {
         super(name);
     }
 
+    @Override
     public void run() {
         System.out.println(Thread.currentThread().getName() + " is running");
     }
@@ -21,5 +22,5 @@ public class Demo {
         System.out.println(Thread.currentThread().getName() + " call mythread.start()");
         mythread.start();
     }
-    
+
 }
