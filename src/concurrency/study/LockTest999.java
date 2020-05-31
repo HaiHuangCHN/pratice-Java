@@ -4,12 +4,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class LockTest {
+public class LockTest999 {
 
     private Lock lock = new ReentrantLock(); // ReentrantLock is the sub-class of Lock
 
     public static void main(String[] args) {
-        LockTest lockTest = new LockTest();
+        LockTest999 lockTest = new LockTest999();
 
         // Thread 1
         Thread t1 = new Thread(new Runnable() {
