@@ -9,9 +9,7 @@ public class NormalClass3 extends AbstractClass implements Interface {
     private String normalC3;
 
     public NormalClass3() {
-        super();// it can be omitted as JVM would add for us. And JVM will invoke its super
-                // class to create an instance
-        // if inherit super class, please add super() as a best practice
+        super();
         System.out.println("Enter NormalClass3 no-argu Constructor");
     }
 
@@ -27,16 +25,6 @@ public class NormalClass3 extends AbstractClass implements Interface {
     public String sameNameMethod() {
         return "NormalCLass3 override default implementation";
     }
-
-//    /**
-//     * Cannot override the final method from super class
-//     * 
-//     * @return
-//     */
-//    @Override
-//    public String finalMethod() {
-//        return "NormalCLass3 override default implementation";
-//    }
 
     @Override
     public String abstractMethod() {
