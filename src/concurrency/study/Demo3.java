@@ -1,8 +1,8 @@
 package concurrency.study;
 
-class Count_Syn_NonSyn {
+class Count_Syn_And_Syn {
 
-    // Exist 含有synchronized同步块的方法
+    // exist 含有synchronized同步块的方法
     public void synMethod() {
         synchronized (this) {
             try {
@@ -15,23 +15,25 @@ class Count_Syn_NonSyn {
         }
     }
 
-    // Non 非同步的方法
-    public void nonSynMethod() {
-        try {
-            for (int i = 0; i < 5; i++) {
-                Thread.sleep(100);
-                System.out.println(Thread.currentThread().getName() + " nonSynMethod loop " + i);
+    // also exist 也包含synchronized同步块的方法
+    public void synMethod2() {
+        synchronized (this) {
+            try {
+                for (int i = 0; i < 5; i++) {
+                    Thread.sleep(100);
+                    System.out.println(Thread.currentThread().getName() + " nonSynMethod loop " + i);
+                }
+            } catch (InterruptedException ie) {
             }
-        } catch (InterruptedException ie) {
         }
     }
 }
 
-public class Demo2 {
+public class Demo3 {
 
     public static void main(String[] args) {
-        final Count_Syn_NonSyn count = new Count_Syn_NonSyn();
-        // New 新建t1, t1会调用“count对象”的synMethod()方法
+        final Count_Syn_And_Syn count = new Count_Syn_And_Syn();
+        // 新建t1, t1会调用“count对象”的synMethod()方法
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -39,11 +41,11 @@ public class Demo2 {
             }
         }, "t1");
 
-        // New 新建t2, t2会调用“count对象”的nonSynMethod()方法
+        // 新建t2, t2会调用“count对象”的nonSynMethod()方法
         Thread t2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                count.nonSynMethod();
+                count.synMethod2();
             }
         }, "t2");
 
