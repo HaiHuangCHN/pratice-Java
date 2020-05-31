@@ -1,4 +1,4 @@
-package concurrency.study;
+package concurrency.study.skywang;
 
 /**
  * Use synchronized, the two threads execute a++ at the same time

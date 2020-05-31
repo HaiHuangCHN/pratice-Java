@@ -1,4 +1,4 @@
-package concurrency.study;
+package concurrency.study.skywang;
 
 /**
  * Object lock example: lock code block

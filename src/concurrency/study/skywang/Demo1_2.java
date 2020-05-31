@@ -1,4 +1,4 @@
-package concurrency.study;
+package concurrency.study.skywang;
 
 class MyThread1_2 extends Thread {
 

@@ -1,4 +1,4 @@
-package concurrency.study;
+package concurrency.study.skywang;
 
 class MyRunable1_1 implements Runnable {
 
