@@ -7,13 +7,13 @@ public abstract interface Interface extends SuperInterface1, SuperInterface2 {
     public static final String dataField = "dataField must be public static final";
 
 //    @Override // TODO not able to add @Override, but why?
-    public abstract String method1();
+    public abstract String sameSuperInterfaceMethod();
 
     /**
      * "public abstract" can be omitted
      * 
      * @return
      */
-    String method2();
+    String interfaceMethod1();
 
 }
