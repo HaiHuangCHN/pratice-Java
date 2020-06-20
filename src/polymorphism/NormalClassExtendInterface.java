@@ -14,7 +14,7 @@ public class NormalClassExtendInterface implements SuperInterface1/* , SuperInte
     }
 
     @Override
-    public String sameSuperInterfaceMethod() {
+    public String overrideSuperInterface12Method() {
         System.out.println("The type NormalClassExtendInterface must implement the inherited abstract method Interface.sameSuperInterfaceMethod()");
         return null;
     }

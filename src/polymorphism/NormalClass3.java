@@ -1,6 +1,6 @@
 package polymorphism;
 
-public class NormalClass3 extends AbstractClass implements Interface {
+public class NormalClass3 extends AbstractClass implements SubInterface {
 
     private String normalA3;
 
@@ -33,13 +33,13 @@ public class NormalClass3 extends AbstractClass implements Interface {
     }
 
     @Override
-    public String sameSuperInterfaceMethod() {
+    public String overrideSuperInterface12Method() {
         System.out.println("The type NormalClass1 must implement the inherited abstract method Interface.sameSuperInterfaceMethod()");
         return null;
     }
 
     @Override
-    public String interfaceMethod1() {
+    public String subInterfaceMethod1() {
         System.out.println("The type NormalClass1 must implement the inherited abstract method Interface.interfaceMethod1()");
         return null;
     }

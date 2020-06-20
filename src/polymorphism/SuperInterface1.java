@@ -2,7 +2,7 @@ package polymorphism;
 
 public interface SuperInterface1 {
 
-    String sameSuperInterfaceMethod();
+    String overrideSuperInterface12Method();
 
     String superInterface1Method1();
 
@@ -10,14 +10,14 @@ public interface SuperInterface1 {
 
     // since JDK 1.8, must be invoked by SuperInterface1, no other way
     public static String superInterfaceStaticMethod() {
-        System.out.println("SuperInterface1 static method");
+        System.out.println("Invoke SuperInterface1 static method");
         return null;
     }
 
     // since JDK 1.8, must be invoked by instance which implements this interface
     // can be accessed from different package
     default String superInterfaceNonStaticMethod() {
-        System.out.println("SuperInterface1 non-static method2");
+        System.out.println("Invoke SuperInterface1 non-static method2");
         return null;
     }
 

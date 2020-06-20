@@ -2,15 +2,20 @@ package polymorphism;
 
 public interface SuperInterface2 {
 
-    String sameSuperInterfaceMethod();
+    String overrideSuperInterface12Method();
 
     public static String superInterfaceStaticMethod() {
         System.out.println("SuperInterface2 static method1");
         return null;
     }
 
-    default String superInterfaceNonStaticMethod() {
-        System.out.println("SuperInterface2 non-static method2");
+    // Cause the following error:
+    // Duplicate default methods named superInterfaceNonStaticMethod with the
+    // parameters () and () are inherited from the types SuperInterface2 and
+    // SuperInterface1
+    // Just add one more argument could resolve it
+    default String superInterfaceNonStaticMethod(String who) {
+        System.out.println(who + "is calling SuperInterface2 non-static method2");
         return null;
     }
 

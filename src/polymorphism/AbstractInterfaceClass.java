@@ -1,6 +1,6 @@
 package polymorphism;
 
-public abstract class AbstractInterfaceClass implements Interface {
+public abstract class AbstractInterfaceClass implements SubInterface {
 
     private String abstractInterfaceA;
 
