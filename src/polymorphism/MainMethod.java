@@ -3,17 +3,17 @@ package polymorphism;
 public class MainMethod {
     public static void main(String[] args) {
         SubClass1 normalClass1NoArgu = new SubClass1();
-        System.out.println(normalClass1NoArgu.sameNameMethod());
+        System.out.println(normalClass1NoArgu.defaultMethod());
 
         AbstractClass normalClass1Argu = new SubClass1("normalA", "normalB", "normalC", "abstractA", "abstractB", "abstractC");
-        System.out.println(normalClass1Argu.sameNameMethod());
+        System.out.println(normalClass1Argu.defaultMethod());
 
 //        // static methods cannot use this or super keywords
 //        super.staticMethod();
 //        this.staticMethod();
 
         AbstractClass normalClass3NoArgu = new SubClass3();
-        System.out.println(normalClass3NoArgu.sameNameMethod());
+        System.out.println(normalClass3NoArgu.defaultMethod());
 
 //        // Error as normalClassExtendInterface is not sub-class of SuperInterface1,
 //        // error message: "The method superInterface1StaticMethod() is undefined for the

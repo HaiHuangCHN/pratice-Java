@@ -2,25 +2,25 @@ package polymorphism;
 
 public abstract class AbstractClass {
 
-    private String abstractA;
+    private String abstractField1;
 
-    private String abstractB;
+    private String abstractField2;
 
-    private String abstractC;
+    private String abstractField3;
 
     public AbstractClass() {
         System.out.println("Enter AbstractClass no-argu Constructor");
     }
 
-    public AbstractClass(String abstractA, String abstractB, String abstractC) {
+    public AbstractClass(String abstractField1, String abstractField2, String abstractField3) {
         System.out.println("Enter AbstractClass argu Constructor");
-        this.abstractA = abstractA;
-        this.abstractB = abstractB;
-        this.abstractC = abstractC;
+        this.abstractField1 = abstractField1;
+        this.abstractField2 = abstractField2;
+        this.abstractField3 = abstractField3;
     }
 
-    public String sameNameMethod() {
-        return "Default implementation of sameNameMethod(), any sub-class can override it, but not a must";
+    public String defaultMethod() {
+        return "Default implementation of AbstractClass.defaultMethod(), any sub-class can override it, but not a must";
     }
 
     public final String finalMethod() {
@@ -38,33 +38,33 @@ public abstract class AbstractClass {
      */
     public abstract String abstractMethod();
 
-    public String getAbstractA() {
-        return abstractA;
+    protected String getAbstractField1() {
+        return abstractField1;
     }
 
-    public void setAbstractA(String abstractA) {
-        this.abstractA = abstractA;
+    protected void setAbstractField1(String abstractField1) {
+        this.abstractField1 = abstractField1;
     }
 
-    public String getAbstractB() {
-        return abstractB;
+    protected String getAbstractField2() {
+        return abstractField2;
     }
 
-    public void setAbstractB(String abstractB) {
-        this.abstractB = abstractB;
+    protected void setAbstractField2(String abstractField2) {
+        this.abstractField2 = abstractField2;
     }
 
-    public String getAbstractC() {
-        return abstractC;
+    protected String getAbstractField3() {
+        return abstractField3;
     }
 
-    public void setAbstractC(String abstractC) {
-        this.abstractC = abstractC;
+    protected void setAbstractField3(String abstractField3) {
+        this.abstractField3 = abstractField3;
     }
 
     @Override
     public String toString() {
-        return "AbstractClass [abstractA=" + abstractA + ", abstractB=" + abstractB + ", abstractC=" + abstractC + "]";
+        return "AbstractClass [abstractA=" + abstractField1 + ", abstractB=" + abstractField2 + ", abstractC=" + abstractField3 + "]";
     }
 
 }

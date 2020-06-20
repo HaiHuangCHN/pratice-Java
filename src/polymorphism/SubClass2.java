@@ -22,7 +22,7 @@ public class SubClass2 extends AbstractInterfaceClass {
     }
 
     @Override
-    public String sameNameMethod() {
+    public String defaultMethod() {
         return "NormalCLass2 override default implementation";
     }
 

@@ -1,62 +1,67 @@
 package polymorphism;
 
+// Abstract class don't have to implement methods in Interface
 public abstract class AbstractInterfaceClass implements SubInterface {
 
-    private String abstractInterfaceA;
+    private String abstractInterfaceField1;
 
-    private String abstractInterfaceB;
+    private String abstractInterfaceField2;
 
-    private String abstractInterfaceC;
+    private String abstractInterfaceField3;
 
     public AbstractInterfaceClass() {
         System.out.println("Enter AbstractInterfaceClass no-argu Constructor");
     }
 
-    public AbstractInterfaceClass(String abstractInterfaceA, String abstractInterfaceB, String abstractInterfaceC) {
+    public AbstractInterfaceClass(String abstractInterfaceField1, String abstractInterfaceField2, String abstractInterfaceField3) {
         System.out.println("Enter AbstractInterfaceClass argu Constructor");
-        this.abstractInterfaceA = abstractInterfaceA;
-        this.abstractInterfaceB = abstractInterfaceB;
-        this.abstractInterfaceC = abstractInterfaceC;
+        this.abstractInterfaceField1 = abstractInterfaceField1;
+        this.abstractInterfaceField2 = abstractInterfaceField2;
+        this.abstractInterfaceField3 = abstractInterfaceField3;
     }
 
-    public String sameNameMethod() {
-        return "Default implementation of sameNameMethod(), any sub-class can override it, but not a must";
+    public String defaultMethod() {
+        return "Default implementation of AbstractInterfaceClass.defaultMethod(), any sub-class can override it, but not a must";
     }
 
     /**
-     * The abstract method can only be defined by an abstract class
+     * The abstract method can only be defined within an abstract class
      * 
      * @return
      */
     public abstract String abstractMethod();
 
     protected String getAbstractInterfaceA() {
-        return abstractInterfaceA;
+        return abstractInterfaceField1;
     }
 
-    protected void setAbstractInterfaceA(String abstractInterfaceA) {
-        this.abstractInterfaceA = abstractInterfaceA;
+    protected String getAbstractInterfaceField1() {
+        return abstractInterfaceField1;
     }
 
-    protected String getAbstractInterfaceB() {
-        return abstractInterfaceB;
+    protected void setAbstractInterfaceField1(String abstractInterfaceField1) {
+        this.abstractInterfaceField1 = abstractInterfaceField1;
     }
 
-    protected void setAbstractInterfaceB(String abstractInterfaceB) {
-        this.abstractInterfaceB = abstractInterfaceB;
+    protected String getAbstractInterfaceField2() {
+        return abstractInterfaceField2;
     }
 
-    protected String getAbstractInterfaceC() {
-        return abstractInterfaceC;
+    protected void setAbstractInterfaceField2(String abstractInterfaceField2) {
+        this.abstractInterfaceField2 = abstractInterfaceField2;
     }
 
-    protected void setAbstractInterfaceC(String abstractInterfaceC) {
-        this.abstractInterfaceC = abstractInterfaceC;
+    protected String getAbstractInterfaceField3() {
+        return abstractInterfaceField3;
+    }
+
+    protected void setAbstractInterfaceField3(String abstractInterfaceField3) {
+        this.abstractInterfaceField3 = abstractInterfaceField3;
     }
 
     @Override
     public String toString() {
-        return "AbstractInterfaceClass [abstractA=" + abstractInterfaceA + ", abstractB=" + abstractInterfaceB + ", abstractC=" + abstractInterfaceC + "]";
+        return "AbstractInterfaceClass [abstractA=" + abstractInterfaceField1 + ", abstractB=" + abstractInterfaceField2 + ", abstractC=" + abstractInterfaceField3 + "]";
     }
 
 }

@@ -42,7 +42,7 @@ public class SubClass1 extends AbstractClass implements SubInterface {
 // }
 
     @Override
-    public String sameNameMethod() {
+    public String defaultMethod() {
         return "SubClass1 override default implementation";
     }
 

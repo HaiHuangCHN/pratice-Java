@@ -8,11 +8,6 @@ public class SubClassExtendSuperInterface implements SuperInterface1/* , SuperIn
         System.out.println("Enter SubClassExtendSuperInterface no-argu Constructor");
     }
 
-    public SubClassExtendSuperInterface(String normalA1) {
-        System.out.println("Enter SubClassExtendSuperInterface argu Constructor");
-        this.field1 = normalA1;
-    }
-
     @Override
     public String overrideSuperInterface12Method() {
         System.out.println("The type SubClassExtendSuperInterface must implement the inherited abstract method Interface.sameSuperInterfaceMethod()");
@@ -31,13 +26,10 @@ public class SubClassExtendSuperInterface implements SuperInterface1/* , SuperIn
         return null;
     }
 
-//    // Duplicate default methods named superInterfaceNonStaticMethod with the
-//    // parameters () and () are inherited from the types SuperInterface2 and
-//    // SuperInterface1
-//    @Override
-//    public String superInterfaceNonStaticMethod() {
-//        return SuperInterface1.super.superInterfaceNonStaticMethod();
-//    }
+    @Override
+    public String superInterfaceNonStaticMethod() {
+        return SuperInterface1.super.superInterfaceNonStaticMethod();
+    }
 
     protected String getField1() {
         return field1;
