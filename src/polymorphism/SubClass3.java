@@ -23,7 +23,7 @@ public class SubClass3 extends AbstractClass implements SubInterface {
 
     @Override
     public String defaultMethod() {
-        return "NormalCLass1 override default implementation";
+        return "SubClass3 override default implementation";
     }
 
     @Override
@@ -82,7 +82,7 @@ public class SubClass3 extends AbstractClass implements SubInterface {
 
     @Override
     public String toString() {
-        return "SubClass3 [normalA3=" + field1 + ", normalB3=" + field2 + ", normalC3=" + field3 + "]";
+        return "SubClass3 [field1=" + field1 + ", field2=" + field2 + ", field3=" + field3 + "]";
     }
 
 }

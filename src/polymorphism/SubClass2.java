@@ -2,7 +2,8 @@ package polymorphism;
 
 public class SubClass2 extends AbstractInterfaceClass {
 
-    private String field1;
+    private final String field1 = "final";
+//    private final String field1;
 
     private String field2;
 
@@ -10,13 +11,15 @@ public class SubClass2 extends AbstractInterfaceClass {
 
     public SubClass2() {
         super();
+//        field1 = "final";
         System.out.println("Enter SubClass2 no-argu Constructor");
     }
 
-    public SubClass2(String field1, String field2, String field3, String abstractField1, String abstractField2, String abstractField3) {
+    public SubClass2(/* String field1, */String field2, String field3, String abstractField1, String abstractField2, String abstractField3) {
         super(abstractField1, abstractField2, abstractField3);
         System.out.println("Enter SubClass2 argu Constructor");
-        this.field1 = field1;
+//        this.field1 = "final";
+//        this.field1 = field1;// The final field SubClass2.field1 cannot be assigned
         this.field2 = field2;
         this.field3 = field3;
     }
@@ -60,9 +63,10 @@ public class SubClass2 extends AbstractInterfaceClass {
         return field1;
     }
 
-    protected void setField1(String field1) {
-        this.field1 = field1;
-    }
+//    // The final field SubClass2.field1 cannot be assigned
+//    protected void setField1(String field1) {
+//        this.field1 = field1;
+//    }
 
     protected String getField2() {
         return field2;
@@ -82,7 +86,7 @@ public class SubClass2 extends AbstractInterfaceClass {
 
     @Override
     public String toString() {
-        return "SubClass2 [normalA2=" + field1 + ", normalB2=" + field2 + ", normalC2=" + field3 + "]";
+        return "SubClass2 [field1=" + field1 + ", field2=" + field2 + ", field3=" + field3 + "]";
     }
 
 }

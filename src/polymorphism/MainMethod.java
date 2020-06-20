@@ -2,29 +2,29 @@ package polymorphism;
 
 public class MainMethod {
     public static void main(String[] args) {
-        SubClass1 normalClass1NoArgu = new SubClass1();
-        System.out.println(normalClass1NoArgu.defaultMethod());
+        SubClass1 subClass1NoArgu = new SubClass1();
+        System.out.println(subClass1NoArgu.defaultMethod());
 
-        AbstractClass normalClass1Argu = new SubClass1("normalA", "normalB", "normalC", "abstractA", "abstractB", "abstractC");
-        System.out.println(normalClass1Argu.defaultMethod());
+        AbstractClass subClass1Argu = new SubClass1("field1", "field2", "field3", "abstractField1", "abstractField2", "abstractField3");
+        System.out.println(subClass1Argu.defaultMethod());
 
 //        // static methods cannot use this or super keywords
 //        super.staticMethod();
 //        this.staticMethod();
 
-        AbstractClass normalClass3NoArgu = new SubClass3();
-        System.out.println(normalClass3NoArgu.defaultMethod());
+        AbstractClass subClass3NoArgu = new SubClass3();
+        System.out.println(subClass3NoArgu.defaultMethod());
 
-//        // Error as normalClassExtendInterface is not sub-class of SuperInterface1,
-//        // error message: "The method superInterface1StaticMethod() is undefined for the
-//        // type NormalClassExtendInterface"
-//        NormalClassExtendInterface normalClassExtendInterface = new NormalClassExtendInterface();
-//        System.out.println(normalClassExtendInterface.superInterface1StaticMethod1());
+//        // Error as subClassExtendInterface is not sub-class of SuperInterface1,
+//        // error message: "The method superInterfaceStaticMethod() is undefined for the
+//        // type SubClassExtendSuperInterface"
+//        SubClassExtendSuperInterface subClassExtendInterface = new SubClassExtendSuperInterface();
+//        System.out.println(subClassExtendInterface.superInterfaceStaticMethod());
 
         System.out.println(SuperInterface1.superInterfaceStaticMethod());
 
-        SubClassExtendSuperInterface normalClassExtendInterface = new SubClassExtendSuperInterface();
-        System.out.println(normalClassExtendInterface.superInterfaceNonStaticMethod());
+        SubClassExtendSuperInterface subClassExtendSuperInterface = new SubClassExtendSuperInterface();
+        System.out.println(subClassExtendSuperInterface.superInterfaceNonStaticMethod());
 
     }
 

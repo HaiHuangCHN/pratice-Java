@@ -102,7 +102,7 @@ public class SubClass1 extends AbstractClass implements SubInterface {
 
     @Override
     public String toString() {
-        return "SubClass1 [normalA1=" + field1 + ", normalB1=" + field2 + ", normalC1=" + field3 + "]";
+        return "SubClass1 [field1=" + field1 + ", field2=" + field2 + ", field3=" + field3 + "]";
     }
 
 }
