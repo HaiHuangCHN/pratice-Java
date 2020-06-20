@@ -23,7 +23,7 @@ public class MainMethod {
 
         System.out.println(SuperInterface1.superInterfaceStaticMethod());
 
-        SubClassExtendInterface normalClassExtendInterface = new SubClassExtendInterface();
+        SubClassExtendSuperInterface normalClassExtendInterface = new SubClassExtendSuperInterface();
         System.out.println(normalClassExtendInterface.superInterfaceNonStaticMethod());
 
     }

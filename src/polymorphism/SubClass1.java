@@ -76,27 +76,27 @@ public class SubClass1 extends AbstractClass implements SubInterface {
         return null;
     }
 
-    public String getNormalA1() {
+    protected String getNormalA1() {
         return normalA1;
     }
 
-    public void setNormalA1(String normalA1) {
+    protected void setNormalA1(String normalA1) {
         this.normalA1 = normalA1;
     }
 
-    public String getNormalB1() {
+    protected String getNormalB1() {
         return normalB1;
     }
 
-    public void setNormalB1(String normalB1) {
+    protected void setNormalB1(String normalB1) {
         this.normalB1 = normalB1;
     }
 
-    public String getNormalC1() {
+    protected String getNormalC1() {
         return normalC1;
     }
 
-    public void setNormalC1(String normalC1) {
+    protected void setNormalC1(String normalC1) {
         this.normalC1 = normalC1;
     }
 
