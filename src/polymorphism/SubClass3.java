@@ -2,23 +2,23 @@ package polymorphism;
 
 public class SubClass3 extends AbstractClass implements SubInterface {
 
-    private String normalA3;
+    private String field1;
 
-    private String normalB3;
+    private String field2;
 
-    private String normalC3;
+    private String field3;
 
     public SubClass3() {
         super();
         System.out.println("Enter SubClass3 no-argu Constructor");
     }
 
-    public SubClass3(String normalA3, String normalB3, String normalC3, String abstractA, String abstractB, String abstractC) {
-        super(abstractA, abstractB, abstractC);
+    public SubClass3(String field1, String field2, String field3, String abstractField1, String abstractField2, String abstractField3) {
+        super(abstractField1, abstractField2, abstractField3);
         System.out.println("Enter SubClass3 argu Constructor");
-        this.normalA3 = normalA3;
-        this.normalB3 = normalB3;
-        this.normalC3 = normalC3;
+        this.field1 = field1;
+        this.field2 = field2;
+        this.field3 = field3;
     }
 
     @Override
@@ -56,33 +56,33 @@ public class SubClass3 extends AbstractClass implements SubInterface {
         return null;
     }
 
-    protected String getNormalA3() {
-        return normalA3;
+    protected String getField1() {
+        return field1;
     }
 
-    protected void setNormalA3(String normalA3) {
-        this.normalA3 = normalA3;
+    protected void setField1(String field1) {
+        this.field1 = field1;
     }
 
-    protected String getNormalB3() {
-        return normalB3;
+    protected String getField2() {
+        return field2;
     }
 
-    protected void setNormalB3(String normalB3) {
-        this.normalB3 = normalB3;
+    protected void setField2(String field2) {
+        this.field2 = field2;
     }
 
-    protected String getNormalC3() {
-        return normalC3;
+    protected String getField3() {
+        return field3;
     }
 
-    protected void setNormalC3(String normalC3) {
-        this.normalC3 = normalC3;
+    protected void setField3(String field3) {
+        this.field3 = field3;
     }
 
     @Override
     public String toString() {
-        return "SubClass3 [normalA3=" + normalA3 + ", normalB3=" + normalB3 + ", normalC3=" + normalC3 + "]";
+        return "SubClass3 [normalA3=" + field1 + ", normalB3=" + field2 + ", normalC3=" + field3 + "]";
     }
 
 }

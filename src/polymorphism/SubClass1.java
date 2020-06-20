@@ -2,11 +2,11 @@ package polymorphism;
 
 public class SubClass1 extends AbstractClass implements SubInterface {
 
-    private String normalA1;
+    private String field1;
 
-    private String normalB1;
+    private String field2;
 
-    private String normalC1;
+    private String field3;
 
     public SubClass1() {
         super();// it can be omitted as JVM would add for us. And JVM will invoke its super
@@ -15,31 +15,31 @@ public class SubClass1 extends AbstractClass implements SubInterface {
         System.out.println("Enter SubClass1 no-argu Constructor");
     }
 
-    public SubClass1(String normalA1, String normalB1, String normalC1, String abstractA, String abstractB, String abstractC) {
-        super(abstractA, abstractB, abstractC);
+    public SubClass1(String field1, String field2, String field3, String abstractField1, String abstractField2, String abstractField3) {
+        super(abstractField1, abstractField2, abstractField3);
         System.out.println("Enter SubClass1 argu Constructor");
-        this.normalA1 = normalA1;
-        this.normalB1 = normalB1;
-        this.normalC1 = normalC1;
+        this.field1 = field1;
+        this.field2 = field2;
+        this.field3 = field3;
     }
 
-//  /**
-//  * Cannot override the final method from super class
-//  * 
-//  * @return
-//  */
-// public String finalMethod() {
-//     return "NormalCLass1 override default implementation";
-// }
+//    /**
+//     * Cannot override the final method from super class
+//     * 
+//     * @return
+//     */
+//    public String finalMethod() {
+//        return "NormalCLass1 override default implementation";
+//    }
 
-// /**
-//  * Cannot override the static method from super class
-//  * 
-//  * @return
-//  */
-// public String staticMethod() {
-//     return "NormalCLass1 override default implementation";
-// }
+//    /**
+//     * Cannot override the static method from super class
+//     * 
+//     * @return
+//     */
+//    public String staticMethod() {
+//        return "NormalCLass1 override default implementation";
+//    }
 
     @Override
     public String defaultMethod() {
@@ -54,13 +54,13 @@ public class SubClass1 extends AbstractClass implements SubInterface {
 
     @Override
     public String overrideSuperInterface12Method() {
-        System.out.println("The type SubClass1 must implement the inherited abstract method Interface.sameSuperInterfaceMethod()");
+        System.out.println("The type SubClass1 must implement the inherited abstract method SubInterface.overrideSuperInterface12Method()");
         return null;
     }
 
     @Override
     public String subInterfaceMethod1() {
-        System.out.println("The type SubClass1 must implement the inherited abstract method Interface.interfaceMethod1()");
+        System.out.println("The type SubClass1 must implement the inherited abstract method SubInterface.subInterfaceMethod1()");
         return null;
     }
 
@@ -76,33 +76,33 @@ public class SubClass1 extends AbstractClass implements SubInterface {
         return null;
     }
 
-    protected String getNormalA1() {
-        return normalA1;
+    protected String getField1() {
+        return field1;
     }
 
-    protected void setNormalA1(String normalA1) {
-        this.normalA1 = normalA1;
+    protected void setField1(String field1) {
+        this.field1 = field1;
     }
 
-    protected String getNormalB1() {
-        return normalB1;
+    protected String getField2() {
+        return field2;
     }
 
-    protected void setNormalB1(String normalB1) {
-        this.normalB1 = normalB1;
+    protected void setField2(String field2) {
+        this.field2 = field2;
     }
 
-    protected String getNormalC1() {
-        return normalC1;
+    protected String getField3() {
+        return field3;
     }
 
-    protected void setNormalC1(String normalC1) {
-        this.normalC1 = normalC1;
+    protected void setField3(String field3) {
+        this.field3 = field3;
     }
 
     @Override
     public String toString() {
-        return "SubClass1 [normalA1=" + normalA1 + ", normalB1=" + normalB1 + ", normalC1=" + normalC1 + "]";
+        return "SubClass1 [normalA1=" + field1 + ", normalB1=" + field2 + ", normalC1=" + field3 + "]";
     }
 
 }
