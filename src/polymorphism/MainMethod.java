@@ -26,6 +26,7 @@ public class MainMethod {
         SubClassExtendSuperInterface subClassExtendSuperInterface = new SubClassExtendSuperInterface();
         System.out.println(subClassExtendSuperInterface.superInterfaceNonStaticMethod());
 
+        SubSubClass subSubClass = new SubSubClass();
     }
 
 }
