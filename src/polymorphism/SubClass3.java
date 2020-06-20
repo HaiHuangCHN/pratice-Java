@@ -1,6 +1,6 @@
 package polymorphism;
 
-public class NormalClass3 extends AbstractClass implements SubInterface {
+public class SubClass3 extends AbstractClass implements SubInterface {
 
     private String normalA3;
 
@@ -8,12 +8,12 @@ public class NormalClass3 extends AbstractClass implements SubInterface {
 
     private String normalC3;
 
-    public NormalClass3() {
+    public SubClass3() {
         super();
         System.out.println("Enter NormalClass3 no-argu Constructor");
     }
 
-    public NormalClass3(String normalA3, String normalB3, String normalC3, String abstractA, String abstractB, String abstractC) {
+    public SubClass3(String normalA3, String normalB3, String normalC3, String abstractA, String abstractB, String abstractC) {
         super(abstractA, abstractB, abstractC);
         System.out.println("Enter NormalClass3 argu Constructor");
         this.normalA3 = normalA3;

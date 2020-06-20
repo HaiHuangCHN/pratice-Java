@@ -1,6 +1,6 @@
 package polymorphism;
 
-public class NormalClass1 extends AbstractClass implements SubInterface {
+public class SubClass1 extends AbstractClass implements SubInterface {
 
     private String normalA1;
 
@@ -8,14 +8,14 @@ public class NormalClass1 extends AbstractClass implements SubInterface {
 
     private String normalC1;
 
-    public NormalClass1() {
+    public SubClass1() {
         super();// it can be omitted as JVM would add for us. And JVM will invoke its super
                 // class to create an instance
         // if inherit super class, please add super() as a best practice
         System.out.println("Enter NormalClass1 no-argu Constructor");
     }
 
-    public NormalClass1(String normalA1, String normalB1, String normalC1, String abstractA, String abstractB, String abstractC) {
+    public SubClass1(String normalA1, String normalB1, String normalC1, String abstractA, String abstractB, String abstractC) {
         super(abstractA, abstractB, abstractC);
         System.out.println("Enter NormalClass1 argu Constructor");
         this.normalA1 = normalA1;

@@ -1,14 +1,14 @@
 package polymorphism;
 
-public class NormalClassExtendInterface implements SuperInterface1/* , SuperInterface2 */{
+public class SubClassExtendInterface implements SuperInterface1/* , SuperInterface2 */{
 
     private String field1;
 
-    public NormalClassExtendInterface() {
+    public SubClassExtendInterface() {
         System.out.println("Enter NormalClassExtendInterface no-argu Constructor");
     }
 
-    public NormalClassExtendInterface(String normalA1) {
+    public SubClassExtendInterface(String normalA1) {
         System.out.println("Enter NormalClassExtendInterface argu Constructor");
         this.field1 = normalA1;
     }
