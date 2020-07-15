@@ -135,4 +135,25 @@ public class PraticeString {
         return i++;
     }
 
+    @Test
+    public void test_null_equal_object() {
+//        String a = "";
+//        a = null;
+//        if (a == "") {
+//            System.out.println("if");
+//        } else {
+//            System.out.println("else");// run this
+//        }
+
+        // NullPointerException
+        // null == primitive data type will cause error
+        Integer a = 1;
+        a = null;
+        if (a == 1) {
+            System.out.println("if");
+        } else {
+            System.out.println("else");
+        }
+
+    }
 }
