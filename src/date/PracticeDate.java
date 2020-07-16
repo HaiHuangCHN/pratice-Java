@@ -28,7 +28,7 @@ import java.util.TimeZone;
 
 import org.junit.Test;
 
-public class PraticeDate {
+public class PracticeDate {
 
     private static TemporalAdjuster TWO_DAYS_LATER = TemporalAdjusters.ofDateAdjuster(date -> date.plusDays(2));
 
@@ -151,8 +151,7 @@ public class PraticeDate {
         System.out.println("date8: " + date8);
 
         DateFormatSymbols dateFormatSymbols = new DateFormatSymbols();
-        dateFormatSymbols
-                .setWeekdays(new String[] { "Unused", "Sad Sunday", "Manic Monday", "Thriving Tuesday", "Wet Wednesday", "Total Thursday", "Fat Friday", "Super Saturday", });
+        dateFormatSymbols.setWeekdays(new String[] { "Unused", "Sad Sunday", "Manic Monday", "Thriving Tuesday", "Wet Wednesday", "Total Thursday", "Fat Friday", "Super Saturday", });
         String pattern3 = "EEEE MMMM yyyy";
         SimpleDateFormat simpleDateFormat6 = new SimpleDateFormat(pattern3, dateFormatSymbols);
         String date7 = simpleDateFormat6.format(new Date());
@@ -218,7 +217,7 @@ public class PraticeDate {
     @Test
     public void getFirstDateLastMonth() {
         Date currentDate = new Date();
-        Date dateLastMonth = PraticeDate.changeDate(currentDate, 0, -4, 0, 0, 0, 0);
+        Date dateLastMonth = PracticeDate.changeDate(currentDate, 0, -4, 0, 0, 0, 0);
         Calendar c = Calendar.getInstance();
         c.setTime(dateLastMonth);
         c.set(Calendar.DATE, 1);
@@ -266,7 +265,7 @@ public class PraticeDate {
     public void test7() {
         Date date = new Date();
         System.out.println(date);
-        Date dateFormatted = PraticeDate.changeDate(date, 0, 1, -1, 0, 0, 0);
+        Date dateFormatted = PracticeDate.changeDate(date, 0, 1, -1, 0, 0, 0);
         System.out.println(dateFormatted);
     }
 
@@ -282,29 +281,31 @@ public class PraticeDate {
         System.out.println("北京时间: " + timeStr + "\n对应的东京时间为:" + tokyoSdf.format(date));
     }
 
+    /**
+     * This is to practice Java 8 new date function
+     */
     @Test
     public void test10() {
         System.out.println("---------------LocalDate----------------");
         LocalDate localDate = LocalDate.now();
         System.out.println(localDate.toString());
-        System.out.println(localDate.getYear());
-        System.out.println(localDate.get(ChronoField.YEAR));
-        System.out.println(localDate.getMonth());
-        System.out.println(localDate.getMonthValue());
-        System.out.println(localDate.get(ChronoField.MONTH_OF_YEAR));
-        System.out.println(localDate.getDayOfYear());
-        System.out.println(localDate.get(ChronoField.DAY_OF_YEAR));
-        System.out.println(localDate.getDayOfMonth());
-        System.out.println(localDate.get(ChronoField.DAY_OF_MONTH));
-        System.out.println(localDate.getDayOfWeek());// a little difference
-        System.out.println(localDate.get(ChronoField.DAY_OF_WEEK));
-        System.out.println(localDate.getChronology());
-        System.out.println(localDate.getEra());
+        System.out.println(localDate.getYear());// 2020
+        System.out.println(localDate.get(ChronoField.YEAR));// 2020
+        System.out.println(localDate.getMonth());// JULY
+        System.out.println(localDate.getMonthValue());// 7
+        System.out.println(localDate.get(ChronoField.MONTH_OF_YEAR));// 7
+        System.out.println(localDate.getDayOfYear());// 198
+        System.out.println(localDate.get(ChronoField.DAY_OF_YEAR));// 198
+        System.out.println(localDate.getDayOfMonth());// 16
+        System.out.println(localDate.get(ChronoField.DAY_OF_MONTH));// 16
+        System.out.println(localDate.getDayOfWeek());// THURSDAY, a little difference
+        System.out.println(localDate.get(ChronoField.DAY_OF_WEEK));// 4
+        System.out.println(localDate.getChronology());// ISO
+        System.out.println(localDate.getEra());// CE
         LocalDate getSpecificDate = LocalDate.of(2019, 9, 10);
         System.out.println(getSpecificDate);
         System.out.println(LocalDate.parse("20190910", DateTimeFormatter.BASIC_ISO_DATE));
         System.out.println(LocalDate.parse("2019-09-10", DateTimeFormatter.ISO_LOCAL_DATE));
-
         System.out.println("---------------LocalTime----------------");
         LocalTime localTime = LocalTime.now();
         System.out.println(localTime.toString());
@@ -350,7 +351,18 @@ public class PraticeDate {
         LocalDate date2 = LocalDate.of(2018, 10, 3);
         long l = date2.toEpochDay() - date1.toEpochDay();
         System.out.println(l);
-
+        System.out.println("---------------CompareTo----------------");
+        System.out.println(LocalDate.of(2019, 9, 9).compareTo(LocalDate.of(2019, 9, 10)));
+        System.out.println(LocalDate.of(2019, 9, 10).compareTo(LocalDate.of(2019, 9, 10)));
+        System.out.println(LocalDate.of(2019, 9, 11).compareTo(LocalDate.of(2019, 9, 10)));
+        System.out.println(LocalDateTime.of(2019, 9, 9, 12, 34, 50).compareTo(LocalDateTime.of(2019, 9, 9, 12, 34, 56)));
+        System.out.println(LocalDateTime.of(2019, 9, 9, 12, 34, 56).compareTo(LocalDateTime.of(2019, 9, 9, 12, 34, 56)));
+        System.out.println(LocalDateTime.of(2019, 9, 9, 12, 34, 57).compareTo(LocalDateTime.of(2019, 9, 9, 12, 34, 56)));
+        System.out.println("---------------Formatter----------------");
+        System.out.println(localDate.format(DateTimeFormatter.BASIC_ISO_DATE));
+        System.out.println(localDate.format(DateTimeFormatter.ISO_LOCAL_DATE));
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        System.out.println(localDate.format(dateTimeFormatter));
         System.out.println("---------------Instant----------------");
         Instant instant = Instant.now();
         System.out.println(instant.toString() + " #Note: the instant is based on UTC#");
@@ -358,13 +370,6 @@ public class PraticeDate {
         System.out.println(instant.toEpochMilli());
         System.out.println(instant.atZone(ZoneId.of("UTC")).toLocalDateTime());
         System.out.println(instant.atZone(ZoneId.of("UTC")).toLocalDate());
-
-        System.out.println("---------------Formatter----------------");
-        System.out.println(localDate.format(DateTimeFormatter.BASIC_ISO_DATE));
-        System.out.println(localDate.format(DateTimeFormatter.ISO_LOCAL_DATE));
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        System.out.println(localDate.format(dateTimeFormatter));
-
         System.out.println("---------------Zone----------------");
         ZoneId defaultZoneId = ZoneId.systemDefault();
         System.out.println(defaultZoneId);
@@ -377,7 +382,6 @@ public class PraticeDate {
         System.out.println(zonedDateTime.withZoneSameInstant(ZoneId.of("America/New_York")));
         System.out.println(zonedDateTime.withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime());
         System.out.println(zonedDateTime.withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime().getNano());
-
         System.out.println("---------------Period----------------");
         LocalDate dateBefore = LocalDate.of(2017, 11, 11);
         LocalDate dateAfter = LocalDate.of(2019, 4, 1);
@@ -387,16 +391,13 @@ public class PraticeDate {
         System.out.println("Period.ofYears: " + Period.ofYears(2));
         System.out.println("Period.of: " + Period.of(1, 2, 3));
         System.out.println("Period.from: " + Period.from(Period.of(20, 10, 5)));
-
         System.out.println("---------------Date --> Instant----------------");
         Date date = new Date();
         System.out.println(date.toInstant());
-
         System.out.println("---------------Long --> Date----------------");
         System.out.println(System.currentTimeMillis());
         System.out.println(Instant.ofEpochMilli(System.currentTimeMillis()));
         System.out.println(Instant.ofEpochMilli(System.currentTimeMillis()).atZone(defaultZoneId).toLocalDate());
-
         System.out.println("---------------First Day vs Last Date----------------");
         System.out.println("TemporalAdjusters.firstDay: " + localDate.with(TemporalAdjusters.firstDayOfMonth()));
         System.out.println("TemporalAdjusters.lastDay: " + localDate.with(TemporalAdjusters.lastDayOfMonth()));
@@ -407,12 +408,10 @@ public class PraticeDate {
         System.out.println("TemporalAdjusters.ofDateAdjuster: " + localDate.with(TWO_DAYS_LATER));
         System.out.println("TemporalAdjusters.previous: " + localDate.with(TemporalAdjusters.previous(DayOfWeek.TUESDAY)));
         System.out.println("TemporalAdjusters.previousOrSame: " + localDate.with(TemporalAdjusters.previousOrSame(DayOfWeek.TUESDAY)));
-
         System.out.println("---------------How many days of month----------------");
         LocalDate lastDay = localDate.with(TemporalAdjusters.lastDayOfMonth());
         int dayOfMonth = lastDay.getDayOfMonth();
         System.out.println(dayOfMonth);
-
         System.out.println("---------------ofEpochSecond() vs ofEpochMilli()----------------");
         Instant now = Instant.now();
         System.out.println(now);
@@ -422,14 +421,12 @@ public class PraticeDate {
         // Instantiate instant according to Second instead of Milli-Second
         System.out.println(Instant.ofEpochSecond(lg));
         // 2020-03-27T09:32:18Z
-
         System.out.println("---------------Parse： 2018-12-07T09:33:38+00:00----------------");
         final String stringForZonedDateTime = "2018-12-07T09:33:38+00:00";
         ZonedDateTime parseOfZonedDateTime = ZonedDateTime.parse(stringForZonedDateTime);
         System.out.println(parseOfZonedDateTime.toString());
         ZoneId zoneOfZonedDateTime = parseOfZonedDateTime.getZone();
         System.out.println(zoneOfZonedDateTime);
-
         System.out.println("---------------Parse： 2018-12-07T09:33:38Z----------------");
         System.out.println("---------------Way 1: using ZonedDateTime----------------");
         final String stringForZonedDateTime2 = "2018-12-07T09:33:38Z";
@@ -437,17 +434,14 @@ public class PraticeDate {
         System.out.println(parseOfZonedDateTime2.toString());
         ZoneId zoneOfZonedDateTime2 = parseOfZonedDateTime2.getZone();
         System.out.println(zoneOfZonedDateTime2);
-
         System.out.println("---------------Way 2: using Instant----------------");
         final String stringForInstant = "2018-12-07T09:33:38Z";
         Instant parseOfInstant = Instant.parse(stringForInstant);
         System.out.println(parseOfInstant);
-
         System.out.println("---------------Parse： 2018-12-07T09:33:38----------------");
         final String stringForLocalDateTime = "2018-12-07T09:33:38";
         LocalDateTime parseOfLocalDateTime = LocalDateTime.parse(stringForLocalDateTime);
         System.out.println(parseOfLocalDateTime.toString());
-
         System.out.println("---------------Parse: 2018-12-07-------------------------");
         final String stringForLocalDate = "2018-12-07";
         LocalDate parseOfLocalDate = LocalDate.parse(stringForLocalDate);
