@@ -6,8 +6,12 @@ public class GreatesCommonDivisorTest {
 
     @Test
     public void testReverseSequence() {
-        int result = GreatesCommonDivisor.gcd(13, 56);
-        System.out.println(result);
+//        System.out.println(1112 % 695);
+//        System.out.println(695 % 1112);
+        int result1 = GreatesCommonDivisor.gcd(1112, 695);
+        System.out.println(result1);
+//        int result2 = GreatesCommonDivisor.gcd(695, 1112);
+//        System.out.println(result2);
     }
 
 }
