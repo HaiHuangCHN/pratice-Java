@@ -382,6 +382,7 @@ public class PracticeDate {
         System.out.println(zonedDateTime.withZoneSameInstant(ZoneId.of("America/New_York")));
         System.out.println(zonedDateTime.withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime());
         System.out.println(zonedDateTime.withZoneSameInstant(ZoneId.of("America/New_York")).toLocalDateTime().getNano());
+        System.out.println(zonedDateTime.withZoneSameInstant(ZoneId.of("UTC")).toLocalDateTime());
         System.out.println("---------------Period----------------");
         LocalDate dateBefore = LocalDate.of(2017, 11, 11);
         LocalDate dateAfter = LocalDate.of(2019, 4, 1);

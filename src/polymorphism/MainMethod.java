@@ -1,7 +1,7 @@
 package polymorphism;
 
 public class MainMethod {
-    public static void main(String[] args) {
+    public static void main(String[] args) {    
         SubClass1 subClass1NoArgu = new SubClass1();
         System.out.println(subClass1NoArgu.defaultMethod());
 

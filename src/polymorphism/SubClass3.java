@@ -9,7 +9,6 @@ public class SubClass3 extends AbstractClass implements SubInterface {
     private String field3;
 
     public SubClass3() {
-        super();
         System.out.println("Enter SubClass3 no-argu Constructor");
     }
 

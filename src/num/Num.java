@@ -3,6 +3,8 @@ package num;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import org.junit.Test;
@@ -178,4 +180,38 @@ public class Num {
         System.out.println(i);
     }
 
+    @Test
+    public void testEqual() {
+        Integer s = new Integer(9);
+        Integer t = new Integer(9);
+        Long u = new Long(9);
+        System.out.println(s == t);
+//        System.out.println(s == u);
+//        System.out.println(t == u);
+        System.out.println(s.equals(t));
+        System.out.println(s.equals(u));
+        System.out.println(t.equals(u));
+    }
+
+    @Test
+    public void testEqualInteger() {
+        Integer s = new Integer(9);
+        Integer t = new Integer(9);
+        Integer a = 9;
+        Long u = new Long(9);
+        List<Integer> intList = new ArrayList<>();
+        intList.add(s);
+
+        System.out.println(intList.get(0) == t);
+        System.out.println(s == t);
+//        System.out.println(s == u);
+//        System.out.println(t == u);
+        System.out.println(s.equals(t));
+        System.out.println(s.equals(9));
+        System.out.println(s.equals(new Integer("9")));
+        System.out.println(9 == s);
+        System.out.println(s == a);
+        System.out.println(s.equals(u));
+        System.out.println(t.equals(u));
+    }
 }

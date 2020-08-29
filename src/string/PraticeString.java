@@ -154,6 +154,13 @@ public class PraticeString {
         } else {
             System.out.println("else");
         }
-
     }
+
+    @Test
+    public void testReplace() {
+        String abc = "abc";
+        abc = abc.replace('b', 'd');
+        System.out.println(abc);
+    }
+    
 }

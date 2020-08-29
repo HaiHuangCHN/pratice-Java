@@ -1,6 +1,6 @@
 package pattern;
 
-import java.util.Arrays;
+import java.math.BigDecimal;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -178,6 +178,57 @@ public class PatternPratice {
     public void test16() {
         String str = "--";
         System.out.println(str.matches("(\\d+)-(\\d+)-(\\d+)"));
+    }
+
+    // Example 1: PAX 160-2380659894/ETCX/HKD13782.78/07AUG20/HKGCX0300/77491982 (with a decimal point)
+    // Example 2: PAX 160-2380659894/ETCX/HKD13782/07AUG20/HKGCX0300/77491982 (not with a decimal point)
+    // Example 3: PAX 160-2380659894-95/ETCX/HKD13782/07AUG20/HKGCX0300/77491982
+    // Example 4: PAX 160-9481514911/ETCX/18NOV19/HKGWL2104/13302332 (don't have
+    // money info)
+    // Example 5: PAX 125-9472843019-21/ETBA/09DEC19/LONBA0ERS/91401376 (interline
+    // ticket, not CX/KA)
+    @Test
+    public void test17() {
+        String a = " ([0-9]+-[0-9]+)/ET(CX|KA)/([A-Z]+)(\\d+)(.?\\d*)/";
+        String b = " ([0-9]+-[0-9]+(-[0-9]+)*)/ET(CX|KA)/([A-Z]+)(\\d+)(.?\\d*)/";
+        String c = " ([0-9]+-[0-9]+(-[0-9]+)*)/ET(CX|KA)(/([A-Z]+)(\\d+)(.?\\d*))*/";
+        String d = " (\\d+-\\d+(-\\d+)*)/ET([A-Z]+)(/([A-Z]+)(\\d+)(.\\d+)*)*/";
+
+        Pattern p = Pattern.compile(d);
+        Matcher m = p.matcher("PAX 125-9472843019-21/ETBA/09DEC19/LONBA0ERS/91401376");
+        if (m.find()) {
+            System.out.println("Ticket number: " + m.group(1));
+            System.out.println(m.group(2));
+            System.out.println(m.group(3));
+            System.out.println(m.group(4));
+            System.out.println(m.group(5));
+            System.out.println(m.group(6));
+            System.out.println(m.group(7));
+            if (m.group(5) != null && m.group(6) != null && m.group(7) != null) {
+                System.out.println("Found money info: ");
+                System.out.println("Currency: " + m.group(5));
+                System.out.println("Amount: " + new BigDecimal(m.group(6) + m.group(7)));
+            } else if (m.group(5) != null && m.group(6) != null && m.group(7) == null) {
+                System.out.println();
+                System.out.println("Found money info: ");
+                System.out.println("Currency: " + m.group(5));
+                System.out.println("Amount: " + new BigDecimal(m.group(6)));
+            }
+        } else {
+            System.out.println("Not found");
+        }
+
+//        if (m1.find()) {
+//            System.out.println(m1.group(1));
+//            System.out.println(m1.group(2));
+//            System.out.println(m1.group(3));
+//            System.out.println(m1.group(4));
+//            System.out.println(m1.group(5));
+//            System.out.println(m1.group(6));
+//            System.out.println(m1.group(7));
+//        } else {
+//            System.out.println("Not found");
+//        }
     }
 
 }
