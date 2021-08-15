@@ -1,10 +1,13 @@
 package lambda;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -55,8 +58,13 @@ public class LambdaTest {
     @Test
     public void filterTest() {
         List<Double> cost = Arrays.asList(10.0, 20.0, 30.0, 40.0);
-        List<Double> filteredCost = cost.stream().filter(x -> x > 25.0).collect(Collectors.toList());
-        filteredCost.forEach(x -> System.out.println(x));
+        List<Double> filteredCost1 = cost.stream().filter(x -> x > 25.0).collect(Collectors.toList());
+        List<Double> filteredCost2 = cost.stream().filter(x -> x > 15.0).collect(Collectors.toList());
+        assertEquals(2, filteredCost1.size());
+        assertEquals(3, filteredCost2.size());
+        System.out.println(cost);
+        System.out.println(filteredCost1);
+        System.out.println(filteredCost2);
     }
 
     @Test
@@ -136,6 +144,23 @@ public class LambdaTest {
         bookedSsrOtNum.add("Green");
         List<String> colors = bookedSsrOtNum.stream().filter(c -> c.length() > 4).map(String::toUpperCase).collect(Collectors.toList());
         System.out.println(colors);
+    }
+
+    @Test
+    public void test8() {
+        Map<String, Map<Integer, Integer>> typePaxQuotaMap = new HashMap<>();
+        Map<Integer, Integer> paxQuotaMapHome = new HashMap<>();
+        paxQuotaMapHome.put(1, 3);
+        typePaxQuotaMap.put("type1", paxQuotaMapHome);
+        System.out.println(typePaxQuotaMap);
+        typePaxQuotaMap.forEach((type, paxQuotaMap) -> {
+            paxQuotaMap.forEach((pax, quota) -> {
+                if (pax.equals(1)) {
+                    paxQuotaMap.put(pax, quota - 1);
+                }
+            });
+        });
+        System.out.println(typePaxQuotaMap);
     }
 
 }

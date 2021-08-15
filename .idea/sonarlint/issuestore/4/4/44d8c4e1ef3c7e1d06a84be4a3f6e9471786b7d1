@@ -1,0 +1,13 @@
+
+P
+java:S1118	":Add a private constructor to hide the implicit public one.(‰ψ½Ο
+M
+java:S1197@"8Move the array designator from the variable to the type.(®Ί»=
+@
+java:S1659L"+Declare "leftBorderSum" on a separate line.(£οβ
+B
+java:S1659T",Declare "rightBorderSum" on a separate line.(ξ§©
+N
+java:S1197p"8Move the array designator from the variable to the type.(ξ¦΄θ
+;
+java:S1659q"%Declare "thisSum" on a separate line.(Β‰Ξ

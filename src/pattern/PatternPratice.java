@@ -180,8 +180,10 @@ public class PatternPratice {
         System.out.println(str.matches("(\\d+)-(\\d+)-(\\d+)"));
     }
 
-    // Example 1: PAX 160-2380659894/ETCX/HKD13782.78/07AUG20/HKGCX0300/77491982 (with a decimal point)
-    // Example 2: PAX 160-2380659894/ETCX/HKD13782/07AUG20/HKGCX0300/77491982 (not with a decimal point)
+    // Example 1: PAX 160-2380659894/ETCX/HKD13782.78/07AUG20/HKGCX0300/77491982
+    // (with a decimal point)
+    // Example 2: PAX 160-2380659894/ETCX/HKD13782/07AUG20/HKGCX0300/77491982 (not
+    // with a decimal point)
     // Example 3: PAX 160-2380659894-95/ETCX/HKD13782/07AUG20/HKGCX0300/77491982
     // Example 4: PAX 160-9481514911/ETCX/18NOV19/HKGWL2104/13302332 (don't have
     // money info)
@@ -231,4 +233,46 @@ public class PatternPratice {
 //        }
     }
 
+    @Test
+    public void toRegex() {
+        StringBuffer regex = new StringBuffer();
+        Matcher m = Pattern.compile("\\.{1,}|\\*{1,}|[^.*]+").matcher(".....06D.");
+        while (m.find()) {
+            String s = m.group();
+            System.out.println(s);
+            switch (s.charAt(0)) {
+            case '.':
+                // leave dots as they are
+                break;
+            case '*':
+                m.appendReplacement(regex, ".*"); // replace * with .*
+                break;
+            default:
+                m.appendReplacement(regex, Matcher.quoteReplacement(s)); // escape literal match
+            }
+        }
+        System.out.println(Pattern.compile(m.appendTail(regex).toString()));
+    }
+// .....
+// 06D
+
+    @Test
+    public void testRegx() {
+//        System.out.println(Pattern.matches(".....06D.", "HKGCX06DS"));
+//        System.out.println(Pattern.matches(".....06[^D].", "HKGCX06AS"));// 
+        System.out.println(Pattern.matches(".....(?!06D)....", ""));// 
+        // \\b((?!06D)\\w)+\\b
+        Pattern p = Pattern.compile(".....06[^D].");
+        Matcher m = p.matcher("06A");
+        if (m.find()) {
+            System.out.println(m.group(0));
+            System.out.println(m.group(1));
+            System.out.println(m.group(2));
+        }
+    }
+
+    @Test
+    public void testRegxCountry() {
+        System.out.println(Pattern.matches("(?!HK|TW)..", "PG"));// 
+    }
 }

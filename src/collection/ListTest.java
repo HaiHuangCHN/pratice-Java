@@ -47,7 +47,7 @@ public class ListTest {
 	public void test2() {
 		List<String> originalNumbers = new ArrayList<String>();
 		originalNumbers.add("A");
-		originalNumbers.add(null);
+//		originalNumbers.add(null);
 		System.out.println(originalNumbers.size());
 		System.out.println(originalNumbers.contains(null));
 	}

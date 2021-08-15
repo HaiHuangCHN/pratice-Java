@@ -40,14 +40,18 @@ public class Num {
 
     @Test
     public void test4() {
-        BigDecimal b1 = new BigDecimal("4.5");
-        BigDecimal b2 = new BigDecimal("1.5");
+        BigDecimal a = new BigDecimal("4.5");
+        BigDecimal b = new BigDecimal("1.5");
+        BigDecimal c = new BigDecimal("-1.5");
 
-        System.out.println("a + b =" + b1.add(b2));
-        System.out.println("a - b =" + b1.subtract(b2));
-        System.out.println("a * b =" + b1.multiply(b2));
-        System.out.println("a / b =" + b1.divide(b2));
-    }
+        System.out.println("a + b = " + a.add(b));
+        System.out.println("a - b = " + a.subtract(b));
+        System.out.println("a * b = " + a.multiply(b));
+        System.out.println("a / b = " + a.divide(b));
+
+        System.out.println("b - a = " + b.subtract(a));
+        System.out.println("a + c = " + a.add(c));
+}
 
     @Test
     public void test5() {
@@ -208,7 +212,7 @@ public class Num {
 //        System.out.println(t == u);
         System.out.println(s.equals(t));
         System.out.println(s.equals(9));
-        System.out.println(s.equals(new Integer("9")));
+        System.out.println("s.equals(new Integer(\"9\")): " + s.equals(new Integer("9")));
         System.out.println(9 == s);
         System.out.println(s == a);
         System.out.println(s.equals(u));

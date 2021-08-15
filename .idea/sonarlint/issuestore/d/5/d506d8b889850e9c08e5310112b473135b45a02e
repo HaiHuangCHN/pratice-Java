@@ -1,0 +1,10 @@
+
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ¾§ú
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åöÉÖ
+P
+java:S1854"":Remove this useless assignment to local variable "result".(àö¸ý
+9
+java:S2153""#Remove the unboxing from "Integer".(àö¸ý
+c	java:S100&"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»£½š
+A
+java:S1481""+Remove this unused "result" local variable.(àö¸ý

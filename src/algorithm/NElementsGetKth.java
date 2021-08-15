@@ -62,7 +62,7 @@ public class NElementsGetKth {
 				}
 			}
 		}
-		// TODO Stub to be deleted
+		// Stub
 		System.out.print("After sort(descending order): ");
 		for (int i : intArray) {
 			System.out.print(i + " ");

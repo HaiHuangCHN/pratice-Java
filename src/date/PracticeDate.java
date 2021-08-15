@@ -318,10 +318,11 @@ public class PracticeDate {
         System.out.println(localTime.getNano());
         LocalTime getSpecificTime = LocalTime.of(15, 8, 12, 18794879);
         System.out.println(getSpecificTime.toString());
-
         System.out.println("---------------LocalDateTime----------------");
         LocalDateTime localDateTime = LocalDateTime.now();
-        System.out.println(localDateTime.toString());
+        System.out.println("LocalDateTime.toString(): " + localDateTime.toString());// 2021-07-22T10:51:39
+        System.out.println("LocalDateTime.toString(): " + LocalDateTime.of(2021, 3, 4, 12, 56, 34, 245).toString());// 2021-03-04T12:56:34.000000245
+        System.out.println("LocalDateTime.toString(): " + LocalDateTime.of(2021, 3, 4, 12, 56).toString());// 2021-03-04T12:56
         System.out.println(localDateTime.getYear());
         System.out.println(localDateTime.getMonth());
         System.out.println(localDateTime.getMonthValue());
@@ -351,6 +352,8 @@ public class PracticeDate {
         LocalDate date2 = LocalDate.of(2018, 10, 3);
         long l = date2.toEpochDay() - date1.toEpochDay();
         System.out.println(l);
+        System.out.println(LocalDateTime.parse("2021-07-22T13:36:02", DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        System.out.println(LocalDateTime.parse("0101000000", DateTimeFormatter.ofPattern("ddMMyyHHmm")));
         System.out.println("---------------CompareTo----------------");
         System.out.println(LocalDate.of(2019, 9, 9).compareTo(LocalDate.of(2019, 9, 10)));
         System.out.println(LocalDate.of(2019, 9, 10).compareTo(LocalDate.of(2019, 9, 10)));
@@ -361,8 +364,9 @@ public class PracticeDate {
         System.out.println("---------------Formatter----------------");
         System.out.println(localDate.format(DateTimeFormatter.BASIC_ISO_DATE));
         System.out.println(localDate.format(DateTimeFormatter.ISO_LOCAL_DATE));
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        System.out.println(localDate.format(dateTimeFormatter));
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("ddMMyy");
+        System.out.println("localDate.format(dateTimeFormatter): " + localDate.format(dateTimeFormatter));
+        System.out.println("localDateTime.format(dateTimeFormatter): " + localDateTime.format(dateTimeFormatter));
         System.out.println("---------------Instant----------------");
         Instant instant = Instant.now();
         System.out.println(instant.toString() + " #Note: the instant is based on UTC#");
@@ -374,6 +378,9 @@ public class PracticeDate {
         ZoneId defaultZoneId = ZoneId.systemDefault();
         System.out.println(defaultZoneId);
         ZonedDateTime zonedDateTime = ZonedDateTime.now();
+        System.out.println("ZonedDateTime.now(): " + zonedDateTime);
+        ZonedDateTime zonedDateTime2 = ZonedDateTime.now().plusDays(2);
+        System.out.println("ZonedDateTime.now().plusDays(2): " + zonedDateTime2);
         ZonedDateTime specificZoneTime = ZonedDateTime.now(ZoneId.of("America/New_York"));
         System.out.println(zonedDateTime);
         System.out.println(specificZoneTime);
@@ -424,17 +431,21 @@ public class PracticeDate {
         // 2020-03-27T09:32:18Z
         System.out.println("---------------Parse： 2018-12-07T09:33:38+00:00----------------");
         final String stringForZonedDateTime = "2018-12-07T09:33:38+00:00";
-        ZonedDateTime parseOfZonedDateTime = ZonedDateTime.parse(stringForZonedDateTime);
-        System.out.println(parseOfZonedDateTime.toString());
-        ZoneId zoneOfZonedDateTime = parseOfZonedDateTime.getZone();
-        System.out.println(zoneOfZonedDateTime);
+        ZonedDateTime parseOfZonedDateTime1 = ZonedDateTime.parse(stringForZonedDateTime);// Using DateTimeFormatter.ISO_OFFSET_DATE_TIME inside
+        System.out.println(parseOfZonedDateTime1.toString());
+        ZonedDateTime parseOfZonedDateTime2 = ZonedDateTime.parse(stringForZonedDateTime, DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+        System.out.println(parseOfZonedDateTime2.toString());
+        ZoneId zoneOfZonedDateTime1 = parseOfZonedDateTime1.getZone();
+        System.out.println(zoneOfZonedDateTime1);
+        ZoneId zoneOfZonedDateTime2 = parseOfZonedDateTime2.getZone();
+        System.out.println(zoneOfZonedDateTime2);
         System.out.println("---------------Parse： 2018-12-07T09:33:38Z----------------");
         System.out.println("---------------Way 1: using ZonedDateTime----------------");
         final String stringForZonedDateTime2 = "2018-12-07T09:33:38Z";
-        ZonedDateTime parseOfZonedDateTime2 = ZonedDateTime.parse(stringForZonedDateTime2);
-        System.out.println(parseOfZonedDateTime2.toString());
-        ZoneId zoneOfZonedDateTime2 = parseOfZonedDateTime2.getZone();
-        System.out.println(zoneOfZonedDateTime2);
+        ZonedDateTime parseOfZonedDateTime3 = ZonedDateTime.parse(stringForZonedDateTime2);
+        System.out.println(parseOfZonedDateTime3.toString());
+        ZoneId zoneOfZonedDateTime3 = parseOfZonedDateTime3.getZone();
+        System.out.println(zoneOfZonedDateTime3);
         System.out.println("---------------Way 2: using Instant----------------");
         final String stringForInstant = "2018-12-07T09:33:38Z";
         Instant parseOfInstant = Instant.parse(stringForInstant);
@@ -491,6 +502,25 @@ public class PracticeDate {
         ZonedDateTime z6 = ZonedDateTime.of(parse, ZoneId.of("+00:00"));
         System.out.println(z6.toString());
         // 2018-12-07T09:33:38Z
+    }
+
+    @Test
+    public void test14() {
+        ZonedDateTime actualDay = ZonedDateTime.parse("2021-08-11T08:00:00.000Z", DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+        System.out.println(actualDay);
+        ZonedDateTime futureDay = ZonedDateTime.now(ZoneId.of("Z")).plusDays(2);
+        System.out.println(futureDay);
+        System.out.println(actualDay.compareTo(futureDay));
+        System.out.println(actualDay.isAfter(futureDay));
+        ZonedDateTime hkDateTime = actualDay.withZoneSameInstant(ZoneId.of("+08:00"));
+        System.out.println(hkDateTime);
+        System.out.println(hkDateTime.toLocalDateTime().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        ZonedDateTime hkDateTime2 = actualDay.withZoneSameInstant(ZoneId.of("+08:00"));
+        System.out.println(hkDateTime2);
+        System.out.println(Date.from(actualDay.toLocalDateTime().atZone(ZoneId.systemDefault()).toInstant()));
+        System.out.println(Date.from(actualDay.toLocalDateTime().atZone(ZoneId.of("+09:00")).toInstant()));
+        ZonedDateTime zonedDateTime = LocalDateTime.now().atZone(ZoneId.systemDefault()).withZoneSameInstant(ZoneId.of("Z"));
+        System.out.println(zonedDateTime.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME));
     }
 
 }

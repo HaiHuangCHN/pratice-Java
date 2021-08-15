@@ -17,6 +17,7 @@ public class PraticeString {
         System.out.println(ticket);
         ticket.append("Un");
         ticket.append("known");
+        System.out.println(ticket);
         if (a.contains(ticket.toString())) {
             System.out.println("True");
         } else {
