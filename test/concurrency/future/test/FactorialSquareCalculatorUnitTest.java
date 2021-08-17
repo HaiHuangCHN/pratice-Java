@@ -4,11 +4,19 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.ForkJoinPool;
 
 import static org.junit.Assert.assertEquals;
 
 public class FactorialSquareCalculatorUnitTest {
+
+    private Set<Byte> statusSet = new HashSet<Byte>() {
+        {
+            this.add(Byte.valueOf("1"));
+        }
+    };
 
     @Test
     public void whenCalculatesFactorialSquare_thenReturnCorrectValue() {
@@ -23,7 +31,7 @@ public class FactorialSquareCalculatorUnitTest {
 
     @Test
     public void test() {
-        long i = 210813000001005032L;
+        long i = 120454004532L;
         Long converted = Long.valueOf(i);
         System.out.println(converted.hashCode() % 32);
     }
