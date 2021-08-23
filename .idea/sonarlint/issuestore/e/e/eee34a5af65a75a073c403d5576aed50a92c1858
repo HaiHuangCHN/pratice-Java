@@ -1,16 +1,0 @@
-
-3
-java:S2119"Save and re-use this "Random".(¼ÝÅf
-N	java:S106"9Replace this use of System.out or System.err by a logger.(Œ²¦ 
-N	java:S106,"9Replace this use of System.out or System.err by a logger.(øÅ­Ô
-N	java:S106."9Replace this use of System.out or System.err by a logger.(Ù©È±
-N	java:S106B"9Replace this use of System.out or System.err by a logger.(›Äè´
-N	java:S106D"9Replace this use of System.out or System.err by a logger.(Ù©È±
-D
-java:S5413R")Verify that "remove()" is used correctly.(€¤°Óþÿÿÿÿ
-D
-java:S5413R")Verify that "remove()" is used correctly.(€¤°Óþÿÿÿÿ
-N	java:S106W"9Replace this use of System.out or System.err by a logger.(›Äè´
-S	java:S106X"9Replace this use of System.out or System.err by a logger.(¶Õ›ûÿÿÿÿ
-S	java:S106Y"9Replace this use of System.out or System.err by a logger.(ÞžÒ—üÿÿÿÿ
->	java:S108^")Either remove or fill this block of code.(°¥á‘

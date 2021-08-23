@@ -1,0 +1,12 @@
+
+P
+java:S1118":Add a private constructor to hide the implicit public one.(®ñ¶‚
+”
+java:S1158"~Call the static method Integer.toString(...) instead of instantiating a temporary object to perform this to string conversion.(øüüù
+7
+java:S2129"!Remove this "Integer" constructor(øüüù
+V	java:S125"<This block of commented-out lines of code should be removed.(–‰ã¥ùÿÿÿÿ
+\
+java:S1126"AReplace this if-then-else statement by a single return statement.(“ç´›ùÿÿÿÿ
+5
+java:S2131"Use "Integer.toString" instead.(øüüù
