@@ -1,8 +1,5 @@
 package collection;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class MyKey {
 
     private String name;
