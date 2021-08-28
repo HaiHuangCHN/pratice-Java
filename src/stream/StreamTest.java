@@ -28,9 +28,9 @@ public class StreamTest {
     @Test
     public void test1() {
         StreamTest.Total total1 = new StreamTest.Total();
-        total1.setTotalAmount(new BigDecimal("10"));
+        total1.setTotalAmount(new BigDecimal("-10"));
         StreamTest.Total total2 = new StreamTest.Total();
-        total2.setTotalAmount(new BigDecimal("20"));
+        total2.setTotalAmount(new BigDecimal("-20"));
 
         List<Total> totalList = new ArrayList<>();
         totalList.add(total1);
