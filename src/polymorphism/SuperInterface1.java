@@ -9,6 +9,12 @@ public interface SuperInterface1 {
     String superInterface1Method2();
 
     // Since JDK 1.8, must be invoked by SuperInterface1, no other way
+    static String superInterfaceStaticMethodSame() {
+        System.out.println("SuperInterface1.superInterfaceStaticMethodSame: Invoke SuperInterface1 static method");
+        return null;
+    }
+
+    // Since JDK 1.8, must be invoked by SuperInterface1, no other way
     static String superInterfaceStaticMethod() {
         System.out.println("SuperInterface1.superInterfaceStaticMethod: Invoke SuperInterface1 static method");
         return null;

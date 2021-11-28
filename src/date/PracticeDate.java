@@ -523,4 +523,19 @@ public class PracticeDate {
         System.out.println(zonedDateTime.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME));
     }
 
+    @Test
+    public void testZonedDateTimeCompare() {
+        ZonedDateTime day1 = ZonedDateTime.parse("2021-11-09T10:10:02.000Z", DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+        ZonedDateTime day2 = LocalDateTime.parse("2021-11-09 18:10:02", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")).atZone(ZoneId.systemDefault());
+
+        ZonedDateTime futureDay = ZonedDateTime.now(ZoneId.of("Z")).plusDays(2);
+
+        System.out.println(day1);
+        System.out.println(day2);
+        System.out.println(day1.isEqual(day2));
+        System.out.println(day1.isAfter(day2));
+        System.out.println(day1.isBefore(day2));
+        System.out.println(futureDay);
+    }
+
 }
