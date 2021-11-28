@@ -8,10 +8,10 @@ public class SubClassImplementsSuperInterface implements SuperInterface1/* , Sup
         System.out.println("Enter SubClassImplementsSuperInterface no-argu Constructor");
     }
 
-    public String superInterfaceStaticMethod() {
-        System.out.println("The type SubClassImplementsSuperInterface must implement the inherited abstract method Interface.sameSuperInterfaceMethod()");
-        return null;
-    }
+//    @Override
+//    public String superInterfaceStaticMethod() {
+//        return null;
+//    }
 
     @Override
     public String overrideSuperInterface12Method() {
@@ -33,7 +33,9 @@ public class SubClassImplementsSuperInterface implements SuperInterface1/* , Sup
 
     @Override
     public String superInterfaceNonStaticMethod() {
-        return SuperInterface1.super.superInterfaceNonStaticMethod();
+        SuperInterface1.super.superInterfaceNonStaticMethod();
+        System.out.println("SubClassImplementsSuperInterface.superInterfaceNonStaticMethod override SuperInterface1.superInterfaceNonStaticMethod");
+        return null;
     }
 
     protected String getField1() {

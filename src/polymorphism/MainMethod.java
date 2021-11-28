@@ -30,11 +30,11 @@ public class MainMethod {
         System.out.println(SuperInterface1.superInterfaceStaticMethod());
 
         SubClassImplementsSuperInterface subClassImplementsSuperInterface = new SubClassImplementsSuperInterface();
-        System.out.println(subClassImplementsSuperInterface.superInterfaceNonStaticMethod());
+        subClassImplementsSuperInterface.superInterfaceNonStaticMethod();
 
-        SubSubClass subSubClass = new SubSubClass();
-        SubClass subclass = new SubClass();
-        System.out.println(subclass.getString());
+//        SubSubClass subSubClass = new SubSubClass();
+//        SubClass subclass = new SubClass();
+//        System.out.println(subclass.getString());
     }
 
 }

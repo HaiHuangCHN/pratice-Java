@@ -15,6 +15,7 @@ public interface SuperInterface1 {
     }
 
     // Since JDK 1.8, must be invoked by SuperInterface1, no other way
+    // Can't be overridden by an implementing class.
     static String superInterfaceStaticMethod() {
         System.out.println("SuperInterface1.superInterfaceStaticMethod: Invoke SuperInterface1 static method");
         return null;
