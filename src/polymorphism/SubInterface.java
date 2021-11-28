@@ -17,6 +17,6 @@ public abstract interface SubInterface extends SuperInterface1, SuperInterface2 
      * 
      * @return
      */
-    String subInterfaceMethod1();
+    public abstract String subInterfaceMethod1();
 
 }
