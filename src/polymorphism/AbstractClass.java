@@ -32,7 +32,7 @@ public abstract class AbstractClass {
     }
 
     /**
-     * The abstract method can only be defined by an abstract class
+     * The abstract method can only be defined by an abstract class/interface
      * 
      * @return
      */
@@ -64,7 +64,7 @@ public abstract class AbstractClass {
 
     @Override
     public String toString() {
-        return "AbstractClass [abstractA=" + abstractField1 + ", abstractB=" + abstractField2 + ", abstractC=" + abstractField3 + "]";
+        return "AbstractClass [abstractField1=" + abstractField1 + ", abstractField2=" + abstractField2 + ", abstractField3=" + abstractField3 + "]";
     }
 
 }

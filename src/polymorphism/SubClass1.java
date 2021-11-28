@@ -9,9 +9,9 @@ public class SubClass1 extends AbstractClass implements SubInterface {
     private String field3;
 
     public SubClass1() {
-        super();// it can be omitted as JVM would add for us. And JVM will invoke its super
+        super();// It can be omitted as JVM would add for us. And JVM will invoke its super
                 // class to create an instance
-        // if inherit super class, please add super() as a best practice
+        // If inherit super class, please add super() as a best practice
         System.out.println("Enter SubClass1 no-argu Constructor");
     }
 

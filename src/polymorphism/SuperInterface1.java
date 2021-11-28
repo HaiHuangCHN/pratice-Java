@@ -10,14 +10,14 @@ public interface SuperInterface1 {
 
     // Since JDK 1.8, must be invoked by SuperInterface1, no other way
     static String superInterfaceStaticMethod() {
-        System.out.println("Invoke SuperInterface1 static method");
+        System.out.println("SuperInterface1.superInterfaceStaticMethod: Invoke SuperInterface1 static method");
         return null;
     }
 
     // Since JDK 1.8, must be invoked by instance which implements this interface
     // Can be accessed from different package
     default String superInterfaceNonStaticMethod() {
-        System.out.println("Invoke SuperInterface1 non-static method2");
+        System.out.println("SuperInterface1.superInterfaceStaticMethod: Invoke SuperInterface1 non-static method2");
         return null;
     }
 
