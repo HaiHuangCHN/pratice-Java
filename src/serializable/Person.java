@@ -4,43 +4,56 @@ import java.io.Serializable;
 
 public class Person implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private Man man;
-	private String gender;
-	private transient int age;
+    private Man man;
 
-	public Person() {
-		System.out.println("person constrctor");
-	}
+    private String gender;
 
-	public Person(Man man, String gender, int age) {
-		this.man = man;
-		this.gender = gender;
-		this.age = age;
-	}
+    private String address;
 
-	public Man getMan() {
-		return man;
-	}
+    private transient int age;
 
-	public void setMan(Man man) {
-		this.man = man;
-	}
+    public Person() {
+        System.out.println("person constrctor");
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public Person(Man man, String gender, int age) {
+        this.man = man;
+        this.gender = gender;
+        this.age = age;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public Man getMan() {
+        return man;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public void setMan(Man man) {
+        this.man = man;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
 }
