@@ -16,7 +16,17 @@ public class ChildClass extends SuperClass {
 
     }
 
+    private String childField;
+
     private InnerClass innerClassField;
+
+    public String getChildField() {
+        return childField;
+    }
+
+    public void setChildField(String childField) {
+        this.childField = childField;
+    }
 
     public InnerClass getInnerClassField() {
         return innerClassField;
