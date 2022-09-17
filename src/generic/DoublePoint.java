@@ -1,7 +1,9 @@
 package generic;
 
 public class DoublePoint {
+
 	private Double x;
+
 	private Double y;
 
 	public Double getX() {

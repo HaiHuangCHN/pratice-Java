@@ -1,7 +1,9 @@
 package generic;
 
 public class GenericPoint<T> {
+
 	private T x;
+
 	private T y;
 
 	public GenericPoint(T x, T y) {
@@ -30,4 +32,5 @@ public class GenericPoint<T> {
 	public String toString() {
 		return "GenericPoint [x=" + x + ", y=" + y + "]";
 	}
+
 }

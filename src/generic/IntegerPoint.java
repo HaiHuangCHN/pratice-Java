@@ -1,7 +1,9 @@
 package generic;
 
 public class IntegerPoint {
+
 	private Integer x;
+
 	private Integer y;
 
 	public Integer getX() {
