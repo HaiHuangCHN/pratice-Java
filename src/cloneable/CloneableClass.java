@@ -1,8 +1,8 @@
-package polymorphism;
+package cloneable;
 
 import java.util.Date;
 
-public class TestClass implements Cloneable {
+public class CloneableClass implements Cloneable {
 
     private int id;
 
@@ -25,8 +25,8 @@ public class TestClass implements Cloneable {
     }
 
     @Override
-    public TestClass clone() throws CloneNotSupportedException {
-        return (TestClass) super.clone();
+    public CloneableClass clone() throws CloneNotSupportedException {
+        return (CloneableClass)super.clone();
     }
 
 }
