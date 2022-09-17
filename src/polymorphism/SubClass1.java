@@ -29,7 +29,7 @@ public class SubClass1 extends AbstractClass implements SubInterface {
 //     * @return
 //     */
 //    public String finalMethod() {
-//        return "NormalCLass1 override default implementation";
+//        return "SubClass1 override default implementation";
 //    }
 
 //    /**
@@ -38,7 +38,7 @@ public class SubClass1 extends AbstractClass implements SubInterface {
 //     * @return
 //     */
 //    public String staticMethod() {
-//        return "NormalCLass1 override default implementation";
+//        return "SubClass1 override default implementation";
 //    }
 
     @Override
