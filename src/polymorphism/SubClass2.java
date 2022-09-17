@@ -2,7 +2,9 @@ package polymorphism;
 
 public class SubClass2 extends AbstractInterfaceClass {
 
+    // final field instantiation 1
     private final String field1 = "final";
+    // final field instantiation 2
 //    private final String field1;
 
     private String field2;
@@ -11,6 +13,7 @@ public class SubClass2 extends AbstractInterfaceClass {
 
     public SubClass2() {
         super();
+        // final field instantiation 2
 //        field1 = "final";
         System.out.println("Enter SubClass2 no-argu Constructor");
     }
@@ -18,6 +21,7 @@ public class SubClass2 extends AbstractInterfaceClass {
     public SubClass2(/* String field1, */String field2, String field3, String abstractField1, String abstractField2, String abstractField3) {
         super(abstractField1, abstractField2, abstractField3);
         System.out.println("Enter SubClass2 argu Constructor");
+        // final field instantiation 2
 //        this.field1 = "final";
 //        this.field1 = field1;// The final field SubClass2.field1 cannot be assigned
         this.field2 = field2;
@@ -26,7 +30,7 @@ public class SubClass2 extends AbstractInterfaceClass {
 
     @Override
     public String defaultMethod() {
-        return "NormalCLass2 override default implementation";
+        return "SubClass2 override default implementation";
     }
 
     @Override

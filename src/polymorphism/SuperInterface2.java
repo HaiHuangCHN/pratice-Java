@@ -5,7 +5,7 @@ public interface SuperInterface2 {
     String overrideSuperInterface12Method();
 
     public static String superInterfaceStaticMethodSame() {
-        System.out.println("SuperInterface2.superInterfaceStaticMethodSame: SuperInterface2 static method1");
+        System.out.println("SuperInterface2.superInterfaceStaticMethodSame: Invoke");
         return null;
     }
 

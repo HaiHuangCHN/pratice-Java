@@ -1,7 +1,11 @@
 package polymorphism;
 
-public class MainMethod {
-    public static void main(String[] args) {
+import org.junit.Test;
+
+public class TestPolymorphism {
+
+    @Test
+    public void test(String[] args) {
         SubClass1 subClass1NoArgu = new SubClass1();
         System.out.println(subClass1NoArgu.defaultMethod());
 
