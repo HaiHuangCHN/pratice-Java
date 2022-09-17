@@ -1,6 +1,7 @@
 package extendsDemo;
 
 public class SuperClass {
+
 	private String superField;
 
 	public String getSuperField() {
@@ -10,4 +11,5 @@ public class SuperClass {
 	public void setSuperField(String superField) {
 		this.superField = superField;
 	}
+
 }

@@ -19,10 +19,4 @@ public class Container<T> {
         this.variable = variable;
     }
 
-    public static void main(String[] args) {
-        Container<String> stringContainer = new Container<String>();
-        stringContainer.setVariable("this is a string");
-        System.out.println(stringContainer.getVariable());
-
-    }
 }
