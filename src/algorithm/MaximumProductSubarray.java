@@ -1,17 +1,17 @@
 package algorithm;
 
 /**
- * 4. 给你一个整数数组 nums，请你找出数组中乘积最大的非空连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。
+ * 富途证券面试题
+ * <p>
+ * https://leetcode.cn/problems/maximum-product-subarray/
+ * <p>
+ * 给你一个整数数组 nums，请你找出数组中乘积最大的非空连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。
  * 子数组 是数组的连续子序列。
  * <p>
  * 示例:
  * <p>
  * 输入: nums = [2,3,-2]
  * 输出: 6
- */
-
-/**
- * TODO Fill in desc
  *
  * @author haihuang95@zto.com
  * @version 0.1.0
@@ -69,7 +69,6 @@ public class FutuInterview {
     }
 
     /**
-     *
      * @param array
      * @return
      */
@@ -89,6 +88,43 @@ public class FutuInterview {
         }
 
         return maxMulti;
+    }
+
+    /**
+     * 解题思路
+     * 标签：动态规划
+     * 遍历数组时计算当前最大值，不断更新
+     * 令 imax 为当前最大值，则当前最大值为 imax = max(imax * nums[i], nums[i])
+     * 由于存在负数，那么会导致最大的变最小的，最小的变最大的。因此还需要维护当前最小值 imin，imin = min(imin * nums[i], nums[i])
+     * 当负数出现时则 imax 与 imin 进行交换再进行下一步计算
+     * 时间复杂度：O(n)
+     * <p>
+     * 补充：
+     * 关键点就是这句话：“由于存在负数，那么会导致最大的变最小的，最小的变最大的。因此还需要维护当前最小值 imin。”
+     * <p>
+     * 排除 0 后，若不存在负数的话，数组本身就会是最大乘积
+     * <p>
+     * imax = 表示以当前节点为终结节点的最大连续子序列乘积；imin = 表示以当前节点为终结节点的最小连续子序列乘积
+     *
+     * @param nums
+     * @return
+     */
+    public int maxProduct(int[] nums) {
+        //
+        int max = Integer.MIN_VALUE, imax = 1, imin = 1;
+        for (int num : nums) {
+            if (num < 0) {
+                int tmp = imax;
+                imax = imin;
+                imin = tmp;
+            }
+            imax = Math.max(imax * num, num);
+            imin = Math.min(imin * num, num);
+
+            max = Math.max(max, imax);
+        }
+
+        return max;
     }
 
 }

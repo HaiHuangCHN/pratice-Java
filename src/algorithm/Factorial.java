@@ -5,7 +5,7 @@ public class Factorial {
     /**
      * Calculate factorial (阶乘)
      * 
-     * @param input
+     * @param n
      * @return
      * @throws Exception
      */
