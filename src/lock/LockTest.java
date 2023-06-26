@@ -3,6 +3,39 @@ package lock;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * lock:
+ * Thread-0 开始获取锁
+ * Thread-0 得到锁
+ * Thread-0 开工干活
+ * Thread-1 开始获取锁
+ * Thread-0 : 0
+ * Thread-0 : 1
+ * Thread-0 : 2
+ * Thread-0 : 3
+ * Thread-0 : 4
+ * Thread-0 释放锁
+ * Thread-1 得到锁
+ * Thread-1 开工干活
+ * Thread-1 被中断
+ * Thread-1 做些别的事情
+ * Thread-1 释放锁
+ * <p>
+ * lockInterruptibly:
+ * Thread-0 开始获取锁
+ * Thread-0 得到锁
+ * Thread-0 开工干活
+ * Thread-1 开始获取锁
+ * Thread-1 被中断
+ * Thread-1 做些别的事情
+ * Thread-1 : 没有得到锁的线程运行结束
+ * Thread-0 : 0
+ * Thread-0 : 1
+ * Thread-0 : 2
+ * Thread-0 : 3
+ * Thread-0 : 4
+ * Thread-0 释放锁
+ */
 public class LockTest {
 
     private Lock lock = new ReentrantLock();
@@ -57,4 +90,5 @@ public class LockTest {
         // 线程t1没有得到锁，中断t1的等待
         t1.interrupt();
     }
+
 }
