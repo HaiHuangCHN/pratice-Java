@@ -32,6 +32,8 @@ public class NElementsGetKth {
 	 */
 	public void bubbleSortAscendingOrder(int[] intArray) {
 		for (int i = 0; i < intArray.length - 1; i++) {
+			// -1 = 是因为防止 intArray[j + 1] 超下标
+			// -i = 是因为第 i 次只需排倒数 i（含 i） 前的排序
 			for (int j = 0; j < intArray.length - i - 1; j++) {
 				if (intArray[j] > intArray[j + 1]) {
 					int temp = intArray[j + 1];

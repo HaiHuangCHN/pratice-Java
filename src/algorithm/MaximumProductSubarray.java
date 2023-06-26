@@ -18,7 +18,7 @@ package algorithm;
  * @date 2023/6/15 16:05
  * @since 0.1.0
  */
-public class FutuInterview {
+public class MaximumProductSubarray {
 
     public static void main(String[] args) {
         // 假设数组如下

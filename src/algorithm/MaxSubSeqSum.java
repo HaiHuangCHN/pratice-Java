@@ -111,8 +111,8 @@ public class MaxSubSeqSum {
 	 */
 	public static int maxSubSum4(int array[]) {
 		int maxSum = 0, thisSum = 0;
-		for (int j = 0; j < array.length; j++) {
-			thisSum += array[j];
+		for (int i : array) {
+			thisSum += i;
 			if (thisSum > maxSum) {
 				maxSum = thisSum;
 			} else if (thisSum < 0) {
