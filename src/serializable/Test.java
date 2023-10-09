@@ -7,13 +7,15 @@ public class Test {
     @org.junit.Test
     public void writeSerializableObject() {
         try {
-            Man man = new Man("Huang, Hai", "123456");
-            Person person = new Person(man, "Male", 23);
+            NameAndPassword nameAndPassword = new NameAndPassword("Huang, Hai", "123456");
+            User user = new User(nameAndPassword, "Male", 23);
+            user.setAddress("address");
             ObjectOutputStream objectOutputStream;
             try (FileOutputStream fileOutputStream = new FileOutputStream("output.txt")) {
                 objectOutputStream = new ObjectOutputStream(fileOutputStream);
                 objectOutputStream.writeObject("This is a Test! ");
-                objectOutputStream.writeObject(person);
+                objectOutputStream.writeObject(user);
+                objectOutputStream.flush();
                 objectOutputStream.close();
             }
         } catch (IOException e) {
@@ -28,12 +30,14 @@ public class Test {
             try (FileInputStream fileInputStream = new FileInputStream("output.txt")) {
                 objectInputStream = new ObjectInputStream(fileInputStream);
                 String string = (String)objectInputStream.readObject();
-                Person person = (Person)objectInputStream.readObject();
+                User user = (User)objectInputStream.readObject();
                 System.out.println(string);
-                System.out.println("Man's username: " + person.getMan().getUsername());
-                System.out.println("Man's password: " + person.getMan().getPassword());
-                System.out.println("Gender: " + person.getGender());
-                System.out.println("Age: " + person.getAge());
+                System.out.println("user.nameAndPassword.username: " + user.getNameAndPassword().getUsername());
+                System.out.println("user.nameAndPassword.password: " + user.getNameAndPassword().getPassword());
+                System.out.println("user.gender: " + user.getGender());
+                System.out.println("user.address: " + user.getAddress());
+                System.out.println("user.StaticField: " + User.staticField);
+                System.out.println("Age: " + user.getAge());
                 objectInputStream.close();
             }
         } catch (Exception e) {

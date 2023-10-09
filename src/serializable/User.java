@@ -2,11 +2,13 @@ package serializable;
 
 import java.io.Serializable;
 
-public class Person implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Man man;
+    public static String staticField = "static field won't be serialized";
+
+    private NameAndPassword nameAndPassword;
 
     private String gender;
 
@@ -14,22 +16,22 @@ public class Person implements Serializable {
 
     private transient int age;
 
-    public Person() {
+    public User() {
         System.out.println("person constrctor");
     }
 
-    public Person(Man man, String gender, int age) {
-        this.man = man;
+    public User(NameAndPassword nameAndPassword, String gender, int age) {
+        this.nameAndPassword = nameAndPassword;
         this.gender = gender;
         this.age = age;
     }
 
-    public Man getMan() {
-        return man;
+    public NameAndPassword getNameAndPassword() {
+        return nameAndPassword;
     }
 
-    public void setMan(Man man) {
-        this.man = man;
+    public void setNameAndPassword(NameAndPassword nameAndPassword) {
+        this.nameAndPassword = nameAndPassword;
     }
 
     public String getGender() {

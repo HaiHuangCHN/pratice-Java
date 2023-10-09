@@ -2,7 +2,7 @@ package serializable;
 
 import java.io.Serializable;
 
-public class Man implements Serializable {
+public class NameAndPassword implements Serializable {
 
     private static final long serialVersionUID = 2L;
 
@@ -10,7 +10,7 @@ public class Man implements Serializable {
 
     private String password;
 
-    public Man(String username, String password) {
+    public NameAndPassword(String username, String password) {
         this.username = username;
         this.password = password;
     }
