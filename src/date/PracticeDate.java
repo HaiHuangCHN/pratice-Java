@@ -1,32 +1,22 @@
 package date;
 
+import org.junit.Test;
+
 import java.text.DateFormat;
 import java.text.DateFormatSymbols;
 import java.text.FieldPosition;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Clock;
-import java.time.DayOfWeek;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
-import java.time.Period;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
-import java.time.temporal.TemporalAmount;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
-
-import org.junit.Test;
 
 public class PracticeDate {
 
@@ -536,6 +526,32 @@ public class PracticeDate {
         System.out.println(day1.isAfter(day2));
         System.out.println(day1.isBefore(day2));
         System.out.println(futureDay);
+    }
+
+    @Test
+    public void testPeriodAndDuration() {
+        // start: 2017/1/14 end:2017/1/15 = Years:0 months:0 days:1
+        // start: 2017/1/14 end:2017/2/10 = Years:0 months:0 days:27
+        // start: 2017/1/14 end:2017/2/14 = Years:0 months:1 days:0（是 1 个月，而不是 31 天）
+        // start: 2017/1/14 end:2017/2/15 = Years:0 months:1 days:1
+        // start: 2017/1/14 end:2018/1/10 = Years:0 months:11 days:27
+        // start: 2017/1/14 end:2017/1/10 = Years:0 months:0 days:-4
+        // start: 2017/1/14 end:2017/1/10 = Years:0 months:-2 days:-4
+        LocalDate startDate = LocalDate.of(2017, 1, 14);
+        LocalDate endDate = LocalDate.of(2016, 11, 10);
+
+        Period period = Period.between(startDate, endDate);
+
+        System.out.println("Years:" + period.getYears() +
+                " months:" + period.getMonths() +
+                " days:"+period.getDays());
+
+        System.out.println("Is the period negative? " + period.isNegative());
+
+        Period fromWeeks = Period.ofWeeks(40);
+        System.out.println("Years:" + fromWeeks.getYears() +
+                " months:" + fromWeeks.getMonths() +
+                " days:"+fromWeeks.getDays());
     }
 
 }

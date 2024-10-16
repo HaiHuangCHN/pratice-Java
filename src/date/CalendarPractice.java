@@ -6,13 +6,12 @@ import java.util.*;
 
 import org.junit.Test;
 
-public class CalendarPratice {
+public class CalendarPractice {
 	
     public static final SimpleDateFormat yyyy_MM_dd = new SimpleDateFormat("yyyy-MM-dd");
 
 	@Test
 	public void testCalendar() {
-
 		Calendar c = Calendar.getInstance();
 		System.out.println("The Current Date is:" + c.getTime());
 		System.out.println("The Current Date is:" + c.getTimeZone().getID());
@@ -110,7 +109,7 @@ public class CalendarPratice {
 	}
 	
 	@Test
-	public void test7() {
+	public void testCalendar7() {
 		Date currentDate = new Date();
 		Calendar captureAfter = Calendar.getInstance();
 		captureAfter.setTime(currentDate);
