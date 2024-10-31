@@ -554,4 +554,26 @@ public class PracticeDate {
                 " days:"+fromWeeks.getDays());
     }
 
+    @Test
+    public void testDuration2() throws InterruptedException {
+        Date dateA = new Date();
+        Thread.sleep(3000L);
+        Date dateB = new Date();
+        long a = Duration.between(dateA.toInstant(), dateB.toInstant()).toMillis();
+        System.out.println(a);
+
+        long startTime = 1727786410000L;
+        long finishTime = 1729687209000L;
+        long d = Duration.between(Instant.ofEpochMilli(startTime), Instant.ofEpochMilli(finishTime)).toDays();
+        System.out.println(d);
+    }
+
+    @Test
+    public void testDuration3() {
+        Date date = new Date();
+        System.out.println(LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault()).toLocalTime());
+        System.out.println(Duration.between(LocalTime.of(20, 30, 23), LocalTime.of(19, 30, 23)).toMinutes());
+    }
+
+
 }
