@@ -23,20 +23,30 @@ public class QuickSort {
         doSort(array, 0, array.length - 1);
     }
 
+    /**
+     * 主要方法1：递归过程
+     *
+     * @param array
+     */
     private static void doSort(int[] array, int left, int right) {
-        // 递归结束条件：这里代表只有一个根   大于号：有可能没有子树  1  2  3  4  1为基准，pivot-1 就越界了
+        // 递归结束条件
+        // 为什么要「>=」而不是「=」？是因为，要考虑可能没有子树的情况，如：「1  2  3  4」，以「1」为基准的话，pivot-1 就越界了
         if (left >= right) {
             return;
         }
 
+        // 基准下标
         int pivot = partition(array, left, right);
         doSort(array, left, pivot - 1);
         doSort(array, pivot + 1, right);
     }
 
     /**
+     * 主要方法2：找基准
+     *
      * 备注：
-     * 为什么要 right 先动，而不是 left 先动，那是因为我们以 left 为基准，如果 left 先动，划分好后，你会发现基准左边的值存在比基准大的值，
+     * 为什么要 right 先动，而不是 left 先动，那是因为我们以 left 为基准，
+     * 如果 left 先动，划分好后，你会发现基准左边的值存在比基准大的值，
      * 而我们的策略是基准左边比基准小，基准右边比基准大
      *
      * @param array
@@ -49,6 +59,7 @@ public class QuickSort {
         int baseIndex = left;
         // 这是基准
         int base = array[left];
+        // 一个大 while包含着两个小while，小while是独立的while，
         while (left < right) {
             // right 下标 = 直到找到比 base 更小的值的下标
             while (left < right && array[right] > base) {
@@ -77,6 +88,13 @@ public class QuickSort {
         return left;
     }
 
+    /**
+     * 主要方法3：交换
+     *
+     * @param array
+     * @param m
+     * @param n
+     */
     public static void swap(int[] array, int m, int n) {
         int temp = array[n];
         array[n] = array[m];
