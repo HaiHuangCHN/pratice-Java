@@ -36,9 +36,7 @@ public class NElementsGetKth {
 			// -i = 是因为第 i 次只需排倒数 i（含 i） 前的排序
 			for (int j = 0; j < intArray.length - i - 1; j++) {
 				if (intArray[j] > intArray[j + 1]) {
-					int temp = intArray[j + 1];
-					intArray[j + 1] = intArray[j];
-					intArray[j] = temp;
+					swap(intArray, j, j + 1);
 				}
 			}
 		}
@@ -58,9 +56,7 @@ public class NElementsGetKth {
 		for (int i = 0; i < intArray.length - 1; i++) {
 			for (int j = 0; j < intArray.length - i - 1; j++) {
 				if (intArray[j] < intArray[j + 1]) {
-					int temp = intArray[j];
-					intArray[j] = intArray[j + 1];
-					intArray[j + 1] = temp;
+					swap(intArray, j, j + 1);
 				}
 			}
 		}
@@ -91,13 +87,15 @@ public class NElementsGetKth {
 		System.out.println("");
 	}
 
-	public String binarySearch(int[] intArray, int n) {
-		this.bubbleSortDescendingOrder(intArray);
-		if (n > intArray[intArray.length / 2]) {
-
-		}
-
-		return RESULT;
+	/**
+	 * @param array
+	 * @param m
+	 * @param n
+	 */
+	public void swap(int[] array, int m, int n) {
+		int temp = array[n];
+		array[n] = array[m];
+		array[m] = temp;
 	}
 
 }
