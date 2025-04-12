@@ -1,9 +1,9 @@
-package leetcode;
+package algorithm.leetcode;
 
 /**
  * https://leetcode.cn/problems/container-with-most-water/
  */
-class Solution {
+class ContainerWithMostWaterSolution {
     public int maxArea(int[] height) {
         // i 和 j 分别是左下标和右下标
         int i = 0;
