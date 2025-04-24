@@ -1,4 +1,4 @@
-package algorithm.leetcode.hsbc;
+package algorithm.hsbc;
 
 import java.util.Arrays;
 

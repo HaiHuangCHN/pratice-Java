@@ -1,4 +1,4 @@
-package algorithm.hackerrank.traveloca;
+package algorithm.traveloca;
 
 import java.util.Stack;
 
