@@ -1,4 +1,4 @@
-package algorithm.leetcode;
+package algorithm.leetcode.hsbc;
 
 public class ReachabilityDFS {
     public static void main(String[] args) {

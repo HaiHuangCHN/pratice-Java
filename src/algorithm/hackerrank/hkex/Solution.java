@@ -1,4 +1,4 @@
-package algorithm.hackerrank;
+package algorithm.hackerrank.hkex;
 
 import java.util.ArrayList;
 import java.util.Collections;
