@@ -48,7 +48,7 @@ public class ChooseMe {
     public static void main(String[] args) {
         int N = 6;
         int[] A = {1, 1, 2, 2, 3, 3};
-        int T = 2;
+        int T = 4;
         System.out.println(findMinimumUnhappy(N, A, T)); // 输出 0
     }
 }
