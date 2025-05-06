@@ -2,6 +2,10 @@ package algorithm.nike;
 
 import java.util.*;
 
+/**
+ * #### Question 4: Graphs
+ * Implement a function to perform a breadth-first search (BFS) on a graph represented as an adjacency list.
+ */
 public class GraphBFS {
 
     /**
