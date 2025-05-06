@@ -47,7 +47,7 @@ public class GraphBFS {
         return traversalOrder;
     }
 
-    // 测试用例
+    // 广度优先搜索（BFS）
     public static void main(String[] args) {
         /* 构造邻接表表示的图：
             0 连接 1、2
