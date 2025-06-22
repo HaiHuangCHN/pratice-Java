@@ -5,9 +5,9 @@ package algorithm.nike;
  * Write a class to implement a stack using arrays with methods for push, pop, and peek.
  */
 public class ArrayStack {
-    private int[] elements;  // 存储栈元素的数组
-    private int top;         // 栈顶指针（初始为 -1，表示空栈）
-    private final int capacity;  // 栈的最大容量
+    private int[] elements;       // 存储栈元素的数组
+    private int top;              // 栈顶指针（初始为 -1，表示空栈）
+    private final int capacity;   // 栈的最大容量
 
     /**
      * 构造方法：初始化栈
