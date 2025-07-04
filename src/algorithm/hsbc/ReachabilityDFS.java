@@ -69,10 +69,10 @@ public class ReachabilityDFS {
         int rows = grid.length;
         int cols = grid[0].length;
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if (grid[i][j] == target) {
-                    return new int[]{i, j}; // 返回坐标 (i, j)
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                if (grid[r][c] == target) {
+                    return new int[]{r, c}; // 返回坐标 (r, j)
                 }
             }
         }
