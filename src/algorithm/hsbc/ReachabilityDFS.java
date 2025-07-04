@@ -22,7 +22,7 @@ public class ReachabilityDFS {
         System.out.println("Can reach target: " + isReachable);
     }
 
-    public static boolean isReachable(int[][] grid, int targetX, int targetY) {
+    public static boolean isReachable(int[][] grid, int targetR, int targetC) {
         int rows = grid.length;
         int cols = grid[0].length;
 
@@ -33,28 +33,28 @@ public class ReachabilityDFS {
         int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
         // 从起点 (0, 0) 开始进行DFS
-        return dfs(grid, visited, directions, 0, 0, targetX, targetY);
+        return dfs(grid, visited, directions, 0, 0, targetR, targetC);
     }
 
-    private static boolean dfs(int[][] grid, boolean[][] visited, int[][] directions, int x, int y, int targetX, int targetY) {
+    private static boolean dfs(int[][] grid, boolean[][] visited, int[][] directions, int r, int c, int targetR, int targetC) {
         // 检查是否到达目标位置
-        if (x == targetX && y == targetY) {
+        if (r == targetR && c == targetC) {
             return true;
         }
 
         // 标记当前格子为已访问
-        visited[x][y] = true;
+        visited[r][c] = true;
 
         // 检查四个方向
         for (int[] dir : directions) {
-            int newX = x + dir[0];
-            int newY = y + dir[1];
+            int newR = r + dir[0];
+            int newC = c + dir[1];
 
             // 检查新位置是否在范围内、是否可以通行且未被访问过
-            if (newX >= 0 && newX < grid.length && newY >= 0 && newY < grid[0].length
-                    && (grid[newX][newY] == 1 || grid[newX][newY] == 9)
-                    && !visited[newX][newY]) {
-                if (dfs(grid, visited, directions, newX, newY, targetX, targetY)) {
+            if (newR >= 0 && newR < grid.length && newC >= 0 && newC < grid[0].length
+                    && (grid[newR][newC] == 1 || grid[newR][newC] == 9)
+                    && !visited[newR][newC]) {
+                if (dfs(grid, visited, directions, newR, newC, targetR, targetC)) {
                     return true;
                 }
             }
