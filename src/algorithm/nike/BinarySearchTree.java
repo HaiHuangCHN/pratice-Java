@@ -32,6 +32,7 @@ public class BinarySearchTree {
 
         // 根据 BST 规则递归插入左/右子树
         if (val < node.val) {
+            // 若值大于等于当前节点，插入左子树
             node.left = insertRecursive(node.left, val);
         } else {
             // 若值大于等于当前节点，插入右子树（允许重复值在右子树）

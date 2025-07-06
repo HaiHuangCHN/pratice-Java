@@ -51,6 +51,18 @@ public class GraphBFS {
         return traversalOrder;
     }
 
+    /**
+     *    0
+     *   / \
+     *  /   \
+     * 1 ——  2
+     *        \
+     *         \
+     *     ———  3
+     *    ｜    |     4（孤立节点）
+     *     ————
+     * @param args
+     */
     // 广度优先搜索（BFS）
     public static void main(String[] args) {
         /* 构造邻接表表示的图：
