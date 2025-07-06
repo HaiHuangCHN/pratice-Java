@@ -6,7 +6,7 @@ public class ReachabilityDFS {
                 {1, 0, 1, 0, 0},
                 {1, 0, 1, 0, 0},
                 {1, 0, 0, 9, 1},
-                {1, 1, 1, 0, 0},
+                {1, 1, 1, 1, 0},
                 {1, 0, 0, 0, 0}
         };
 
@@ -72,7 +72,7 @@ public class ReachabilityDFS {
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
                 if (grid[r][c] == target) {
-                    return new int[]{r, c}; // 返回坐标 (r, j)
+                    return new int[]{r, c}; // 返回坐标 (r, c)
                 }
             }
         }
