@@ -15,8 +15,9 @@ public class PartialSort {
         Arrays.sort(arr, 0, k);
 
         // 剩余部分降序排序
+        // 先升序
         Arrays.sort(arr, k, arr.length);
-
+        // 再反转降序
         reverse(arr, k, arr.length - 1);
     }
 

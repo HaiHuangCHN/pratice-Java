@@ -4,6 +4,9 @@ package algorithm.nike;
  * #### Question 1: Arrays
  * Write a function that takes an array of integers and returns the maximum sum of any contiguous subarray.
  *
+ * TODO hai 还是没太看懂
+ * https://leetcode.cn/problems/maximum-subarray/solutions/9058/dong-tai-gui-hua-fen-zhi-fa-python-dai-ma-java-dai/
+ *
  * @author hai.huang.a@outlook.com
  * @date 2025/5/2 18:21
  */
